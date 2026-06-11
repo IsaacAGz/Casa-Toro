@@ -6,6 +6,7 @@ author: Isaac Angulo
 image:
     url: ../../public/Bull.jpg
     alt: 'Casa Toro logo'
+tags: ["experience"]
 ---
 
 ## Mexico's Premier Wine Region
