@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const allExperiences = Object.values(import.meta.glob('./content/*.md', { eager: true}));
+import ExperiencePost from '../components/ExperiencePost.astro';
+const allExperiences = Object.values(import.meta.glob('./experiences/*.md', { eager: true}));
 const pageTitle = "Experiences"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<p>Read all about all of the experiences available when you visit us.</p>
 	<ul>
-		{allExperiences.map((post: any) => <li><a href={post.url}>post.frontmatter.title</a></li>)}
+		{allExperiences.map((post: any) => <ExperiencePost url={post.url} title={post.frontmatter.title} />)}
 	</ul>
 </BaseLayout>
