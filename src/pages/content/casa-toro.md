@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Casa Toro"
+title: "Valle de Guadalupe"
 pubDate: 06-11-2026
 author: Isaac Angulo
 image:
@@ -8,4 +8,4 @@ image:
     alt: 'Casa Toro logo'
 ---
 
-## Welcome to Casa Toro
+## Mexico's Premier Wine Region
