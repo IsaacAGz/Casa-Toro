@@ -1,31 +1,8 @@
 ---
-import Footer from '../components/Footer.astro';
-import "../styles/global.css";
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayouts.astro';
 const pageTitle = "Experiences"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style>
-			h1 {
-				color: Brown;
-				font-size: 4rem;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>Casa Toro</h2>
+</BaseLayout>
