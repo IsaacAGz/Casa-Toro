@@ -31,7 +31,7 @@ const pageTitle = "Home Page"
 
 			menu?.addEventListener('click', () => {
 				const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-				menu.setAttribute('aria-expanded', '${!isExpanded}');
+				menu.setAttribute('aria-expanded', `${!isExpanded}`);
 			});
 		</script>
 	</body>
