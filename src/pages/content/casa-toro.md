@@ -4,7 +4,7 @@ title: "Casa Toro"
 pubDate: 06-11-2026
 author: Isaac Angulo
 image:
-    url: ../../../public/Bull.jpg
+    url: ../../public/Bull.jpg
     alt: 'Casa Toro logo'
 ---
 
