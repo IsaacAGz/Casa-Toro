@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Valle de Guadalupe"
+title: "Dinning Experience"
 pubDate: 06-11-2026
 author: Isaac Angulo
 image:
