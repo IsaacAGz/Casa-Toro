@@ -4,19 +4,25 @@ import ExperiencePost from '../../components/ExperiencePost.astro';
 
 export async function getStaticPaths() {
     const allExperiences = Object.values(import.meta.glob('../experiences/*.md', { eager:true }));
-    return [
-        {params: {tag: "experience" }, props: {experiences: allExperiences}}
-    ];
+    const uniqueTags = [...new Set(allExperiences.map((experience: any) => experience.frontmatter.tags).flat())];
+    
+    return uniqueTags.map((tag) => {
+        const filteredPosts = allExperiences.filter((post: any) => post.frontmatter.tags.includes(tag));
+            return {
+                params: { tag },
+                props: {post: filteredPosts},
+            };
+        });
 }
+
 
 const { tag } = Astro.params;
 const { experiences } = Astro.props;
-const filteredExperiences = experiences.filter((experience: any) => experience.frontmatter.tags?.includes(tag));
 ---
 
 <BaseLayout pageTitle={tag}>
     <p>Posts tagged with {tag}s</p>
     <ul>
-        {filteredExperiences.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
+        {experiences.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
     </ul>
 </BaseLayout>

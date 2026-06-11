@@ -6,7 +6,7 @@ author: Isaac Angulo
 image:
     url: ../../public/Bull.jpg
     alt: 'Casa Toro logo'
-tags: ["experience", "tourism"]
+tags: ["experience", "food"]
 ---
 
-## Mexico's Premier Wine Region
+## Mediterranean meets Mexican
