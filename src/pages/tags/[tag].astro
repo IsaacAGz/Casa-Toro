@@ -17,12 +17,12 @@ export async function getStaticPaths() {
 
 
 const { tag } = Astro.params;
-const { experiences } = Astro.props;
+const { filteredPosts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
     <p>Posts tagged with {tag}s</p>
     <ul>
-        {experiences.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
+        {filteredPosts.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
     </ul>
 </BaseLayout>
