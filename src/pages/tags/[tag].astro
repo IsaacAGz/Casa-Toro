@@ -10,19 +10,19 @@ export async function getStaticPaths() {
         const filteredPosts = allExperiences.filter((post: any) => post.frontmatter.tags.includes(tag));
             return {
                 params: { tag },
-                props: {post: filteredPosts},
+                props: { posts: filteredPosts },
             };
         });
 }
 
 
 const { tag } = Astro.params;
-const { filteredPosts } = Astro.props;
+const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
     <p>Posts tagged with {tag}s</p>
     <ul>
-        {filteredPosts.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
+        {posts.map((experience: any) => <ExperiencePost url={experience.url} title={experience.frontmatter.title}/>)}
     </ul>
 </BaseLayout>
