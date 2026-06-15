@@ -86,7 +86,7 @@ const experiences = ref([
     title: "Off-Road Mountain Trails",
     category: "adventure",
     description: "Gear up and ride dirt paths slicing directly through old-growth desert fauna up into the rustic mountains flanking Tecate.",
-    highlight: "Dual-sport motorbikes provided",
+    highlight: "Electric motorbikes provided",
     image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
   },
   {
