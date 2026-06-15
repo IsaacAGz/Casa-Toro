@@ -1,100 +1,135 @@
-html {
-  background-color: #21627f;
-  font-family: Georgia;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
-}
+@layer base {
+  html {
+    /* Soft, warm, sun-baked clay/sand background instead of sterile white */
+    background-color: #faf8f5; 
+    /* High-end editorial serif for a premium luxury resort feel */
+    font-family: 'Playfair Display', 'Didot', Georgia, serif;
+    color: #1e1b18; /* Deep earthy charcoal-brown instead of harsh black */
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  body {
+    margin: 0 auto;
+    width: 100%;
+    /* Expanded to a wide 7xl max-width to allow for beautiful, sprawling photo galleries */
+    @apply max-w-7xl px-6 md:px-12 py-8 leading-relaxed;
+  }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
+  /* Structural Typography Hierarchy */
+  h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #2e251f; /* Earthy, deep roasted-coffee brown */
+  }
 
-/* nav styles */
+  h1 { @apply text-4xl md:text-6xl mt-4 mb-6 uppercase tracking-wide; font-weight: 400; }
+  h2 { @apply text-2xl md:text-4xl mt-12 mb-6 border-b border-stone-200 pb-3 font-normal tracking-wide; }
+  h3 { @apply text-xl md:text-2xl mt-8 mb-3 tracking-normal font-sans font-semibold text-stone-800; }
 
-.menu {
-  background-color: #0d0950;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
-}
+  p {
+    @apply mb-5 text-stone-600 leading-loose;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* Clean modernist sans-serif for details */
+    font-size: 1.05rem;
+  }
 
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
+  /* Global Accent Links & Buttons */
+  a {
+    color: #b85c37; /* Terracotta / Weathered Corten Steel accent */
+    @apply transition-colors duration-200 no-underline tracking-wide font-sans text-sm uppercase font-semibold;
+  }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
-}
+  a:hover {
+    color: #703217;
+  }
 
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: #ff9776;
-}
+  /* --- Refined Minimalist Navigation (Valle Luxury Style) --- */
+  .menu {
+    @apply px-5 py-2.5 border border-stone-800 font-sans text-xs font-semibold tracking-widest uppercase rounded-none transition-all;
+    background-color: #2e251f;
+    color: #faf8f5;
+    cursor: pointer;
+  }
+  
+  .menu:hover {
+    @apply bg-transparent text-stone-900;
+  }
 
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+    width: 100%;
+    display: none;
+    margin: 1.5rem 0 0 0;
   }
 
   .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    padding: 14px 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    @apply text-xs tracking-widest uppercase text-stone-700 border-b border-stone-100;
   }
 
-  .menu {
-    display: none;
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: #f5f0e6;
+    color: #b85c37;
   }
-}
 
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
+  :has(.menu[aria-expanded="true"]) .nav-links {
+    display: block;
+  }
 
-.dark .menu {
-  background-color: #fff;
-  color: #000;
-}
+  @media screen and (min-width: 636px) {
+    .nav-links {
+      display: flex !important;
+      justify-content: flex-end;
+      gap: 2.5rem;
+      margin: 0;
+    }
 
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
-  color: #0d0950;
-}
+    .nav-links a {
+      display: inline-block;
+      @apply p-0 border-none bg-transparent normal-case;
+    }
+    
+    .nav-links a:hover {
+      background-color: transparent;
+    }
+  }
 
-.dark .nav-links a {
-  color : #fff;
-}
+  /* --- Dark Mode (Valle Night/Stargazing Vibe) --- */
+  html.dark {
+    background-color: #12100e; /* Deep obsidian obsidian canyon night */
+    color: #ece6e0;
+  }
 
-.dark a {
-  color: #ff9776;
+  .dark h1, .dark h2, .dark h3 {
+    color: #f4efe9;
+  }
+
+  .dark p {
+    color: #b4aba4;
+  }
+
+  .dark .menu {
+    @apply border-stone-200 bg-stone-200 text-stone-900;
+  }
+
+  .dark .nav-links a {
+    color: #ece6e0;
+    @apply border-stone-900;
+  }
+
+  .dark .nav-links a:hover {
+    background-color: #1e1b18;
+    color: #e07a5f;
+  }
+
+  .dark a {
+    color: #e07a5f; /* Lighter clay for visibility */
+  }
 }
