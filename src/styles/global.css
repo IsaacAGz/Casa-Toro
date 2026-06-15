@@ -1,14 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 modern import syntax */
+@import "tailwindcss";
+
+@theme {
+  /* This configures your premium resort typography inside Tailwind v4 */
+  --font-serif: 'Playfair Display', 'Didot', Georgia, serif;
+}
 
 @layer base {
   html {
-    /* Soft, warm, sun-baked clay/sand background instead of sterile white */
     background-color: #faf8f5; 
-    /* High-end editorial serif for a premium luxury resort feel */
-    font-family: 'Playfair Display', 'Didot', Georgia, serif;
-    color: #1e1b18; /* Deep earthy charcoal-brown instead of harsh black */
+    font-family: var(--font-serif);
+    color: #1e1b18; 
     scroll-behavior: smooth;
     box-sizing: border-box;
   }
@@ -16,30 +18,50 @@
   body {
     margin: 0 auto;
     width: 100%;
-    /* Expanded to a wide 7xl max-width to allow for beautiful, sprawling photo galleries */
-    @apply max-w-7xl px-6 md:px-12 py-8 leading-relaxed;
+    /* In Tailwind v4, complex responsive classes should be written natively 
+       in regular CSS media queries instead of combining them into a single @apply */
+    @apply max-w-7xl px-6 py-8 leading-relaxed;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      @apply px-12;
+    }
   }
 
   /* Structural Typography Hierarchy */
   h1, h2, h3 {
     font-weight: 600;
     letter-spacing: -0.01em;
-    color: #2e251f; /* Earthy, deep roasted-coffee brown */
+    color: #2e251f; 
   }
 
-  h1 { @apply text-4xl md:text-6xl mt-4 mb-6 uppercase tracking-wide; font-weight: 400; }
-  h2 { @apply text-2xl md:text-4xl mt-12 mb-6 border-b border-stone-200 pb-3 font-normal tracking-wide; }
-  h3 { @apply text-xl md:text-2xl mt-8 mb-3 tracking-normal font-sans font-semibold text-stone-800; }
+  h1 { 
+    @apply text-4xl mt-4 mb-6 uppercase tracking-wide; 
+    font-weight: 400; 
+  }
+  h2 { 
+    @apply text-2xl mt-12 mb-6 border-b border-stone-200 pb-3 font-normal tracking-wide; 
+  }
+  h3 { 
+    @apply text-xl mt-8 mb-3 tracking-normal font-sans font-semibold text-stone-800; 
+  }
+
+  @media (min-width: 768px) {
+    h1 { @apply text-6xl; }
+    h2 { @apply text-4xl; }
+    h3 { @apply text-2xl; }
+  }
 
   p {
     @apply mb-5 text-stone-600 leading-loose;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* Clean modernist sans-serif for details */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; 
     font-size: 1.05rem;
   }
 
   /* Global Accent Links & Buttons */
   a {
-    color: #b85c37; /* Terracotta / Weathered Corten Steel accent */
+    color: #b85c37; 
     @apply transition-colors duration-200 no-underline tracking-wide font-sans text-sm uppercase font-semibold;
   }
 
@@ -101,9 +123,9 @@
     }
   }
 
-  /* --- Dark Mode (Valle Night/Stargazing Vibe) --- */
+  /* --- Cozy Dark Mode (Valle Night/Stargazing Vibe) --- */
   html.dark {
-    background-color: #12100e; /* Deep obsidian obsidian canyon night */
+    background-color: #12100e; 
     color: #ece6e0;
   }
 
@@ -130,6 +152,6 @@
   }
 
   .dark a {
-    color: #e07a5f; /* Lighter clay for visibility */
+    color: #e07a5f; 
   }
 }
