@@ -63,7 +63,7 @@
           </span>
         </div>
         <p class="text-sm text-stone-600 leading-relaxed m-0 italic font-serif">
-          "{ { review.text } }"
+          "{{ review.text }}"
         </p>
         <span class="text-[10px] uppercase tracking-wider text-stone-400 block mt-2.5">
           Verified Guest &bull; {{ review.date }}
