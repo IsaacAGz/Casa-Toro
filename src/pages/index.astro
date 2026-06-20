@@ -2,93 +2,79 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
 import ExperienceGrid from '../components/ExperienceGrid.vue';
-import WhatsAppBooking from '../components/WhatsAppBooking.vue';
 
-const pageTitle = "Casa Toro — Luxury Rustic Cabin | Valle de Guadalupe";
+const pageTitle = "Casa Toro — Luxury Rustic Retreat";
+const WHATSAPP_NUMBER = "5216461234567"; // Match your real property number
+const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting your website and would love to check rates and availability for an upcoming stay.");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-
-  <!-- 1. THE HERO FRAME -->
-  <section class="relative w-full min-h-[70vh] flex flex-col justify-center items-center text-center px-4 py-16 border-b border-stone-200/40">
-    <span class="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-sans block mb-4 font-semibold">
-      Valle de Guadalupe, Mexico
-    </span>
+  
+  <!-- --- HERO STATEMENT HEADER --- -->
+  <section class="pt-16 pb-20 text-center max-w-4xl mx-auto">
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <span class="w-8 h-px bg-stone-300"></span>
+      <span class="text-[10px] tracking-widest uppercase text-stone-400 font-sans font-semibold">
+        Valle de Guadalupe, B.C.
+      </span>
+      <span class="w-8 h-px bg-stone-300"></span>
+    </div>
     
-    <!-- Massive editorial styling for the property name -->
-    <h1 class="text-5xl md:text-7xl font-serif text-stone-950 font-normal tracking-wide m-0 mb-6 uppercase">
+    <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide text-stone-900 m-0 mb-6 uppercase">
       Casa Toro
     </h1>
 
-    <!-- Relocating the tutorial Greeting component to act as a hospitable dynamic subtitle -->
-    <div class="font-sans text-xs tracking-wider text-stone-500 uppercase flex items-center gap-1.5 mb-10">
-      <Greeting client:load messages={["Hola", "Welcome", "Howdy", "Hey there", "Bienvenido"]} /> 
-      <span>from our private vineyard estate.</span>
+    <!-- Polished Tutorial Greeting Element integration -->
+    <div class="font-sans text-xs tracking-wider text-stone-500 uppercase mb-8 inline-block bg-stone-100 px-4 py-2 border border-stone-200/40">
+      <Greeting client:load messages={["Hola", "Welcome", "Howdy", "Bienvenido"]} />, guest.
     </div>
 
-    <!-- Minimalist Architectural Button -->
-    <a 
-      href="#inquire" 
-      class="px-8 py-3.5 bg-stone-900 text-stone-50 text-xs tracking-widest font-semibold uppercase border border-stone-900 transition-all hover:bg-transparent hover:text-stone-950 rounded-none"
-    >
-      Reserve Your Stay
-    </a>
-  </section>
-
-
-  <!-- 2. THE EDITORIAL OVERVIEW -->
-  <section class="max-w-3xl mx-auto text-center py-20 px-4">
-    <h2 class="border-none font-serif text-2xl md:text-3xl italic text-stone-800 font-normal leading-relaxed m-0 mb-6">
-      "An architectural sanctuary shaped by raw concrete, weathered iron, and the rolling dust of Baja's premium wine country."
-    </h2>
-    <p class="font-sans text-stone-600 text-sm md:text-base leading-loose max-w-2xl mx-auto m-0">
-      Perched dramatically on the boulder-lined hillsides between Tecate and Ensenada, Casa Toro offers an unfiltered connection to nature without sacrificing modern sophistication. Spend your mornings navigating rugged dirt trails on sport motorcycles, your afternoons sampling bold local Nebbiolos, and your nights isolated under some of the darkest stargazing skies in North America.
+    <p class="font-serif italic text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto m-0">
+      "Where raw architectural minimalism meets the sun-baked, rustic soul of Mexico's premier wine valley."
     </p>
   </section>
 
-
-  <!-- 3. AT A GLANCE AMENITIES KEY -->
-  <section class="border-y border-stone-200/60 py-8 my-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto font-sans">
-      <div class="flex flex-col">
-        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Infinity Pool</span>
-        <span class="text-[11px] text-stone-400 mt-1 font-light">Heated Stone Soaking</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Dark Skies</span>
-        <span class="text-[11px] text-stone-400 mt-1 font-light">Tracking Telescope</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Target Range</span>
-        <span class="text-[11px] text-stone-400 mt-1 font-light">Archery & Rifles</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Motorcycles</span>
-        <span class="text-[11px] text-stone-400 mt-1 font-light">Dual-Sport Trails</span>
-      </div>
+  <!-- --- THE OVERVIEW FRAME (LUXURY HOVER BLOCKS) --- -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-b border-stone-200/60 py-10 my-12 font-sans">
+    <div class="text-center md:text-left">
+      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Setting</h4>
+      <p class="text-sm text-stone-700 m-0 leading-relaxed">Perched on private boulder ridges flanked by old-growth vineyard rows between Tecate and Ensenada.</p>
+    </div>
+    <div class="text-center md:text-left border-y md:border-y-0 md:border-x border-stone-200/40 py-6 md:py-0 md:px-8">
+      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Sanctuary</h4>
+      <p class="text-sm text-stone-700 m-0 leading-relaxed">Featuring modern concrete features, raw structural timbers, custom stone infinity hot tub, and stargazing deck.</p>
+    </div>
+    <div class="text-center md:text-left md:pl-4">
+      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Horizon</h4>
+      <p class="text-sm text-stone-700 m-0 leading-relaxed">Direct access to mountain off-road motorcycle loops, tactical rifle lines, and archery target fields.</p>
     </div>
   </section>
 
+  <!-- --- EXPERIENCE GALLERY MATRIX --- -->
+  <ExperienceGrid client:visible />
 
-  <!-- 4. THE EXPERIENCE MATRIX -->
-  <!-- Mounts our interactive Vue grid component seamlessly when it enters the viewport -->
-  <div class="py-12">
-    <ExperienceGrid client:visible />
-  </div>
+  <!-- --- FLOATING PERSISTENT WHATSAPP ICON WIDGET --- -->
+  <a 
+    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${PREDEFINED_MESSAGE}`}
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Inquire via WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20ba5a] hover:scale-105 transition-all duration-300 group"
+  >
+    <!-- Crisp SVG WhatsApp Icon representation -->
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 24 24" 
+      fill="currentColor" 
+      class="w-7 h-7"
+    >
+      <path fill-rule="evenodd" d="M1.5 10.5a10.5 10.5 0 1 1 13.568 10.026l-4.14 1.183a.75.75 0 0 1-.926-.926l1.183-4.14A10.5 10.5 0 0 1 1.5 10.5Zm10.5-6a6 6 0 0 0-4.839 9.539.75.75 0 0 1 .082.518l-.66 2.308 2.308-.66a.75.75 0 0 1 .518.082A6 6 0 1 0 12 4.5ZM8.118 7.932a.5.5 0 0 0-.64-.067c-.366.257-.658.627-.818 1.057-.291.782-.095 1.83.606 2.898.673 1.025 1.574 1.868 2.585 2.428.847.469 1.765.651 2.476.388.423-.157.77-.472.998-.857a.5.5 0 0 0-.083-.615l-1.35-1.125a.5.5 0 0 0-.642-.01l-.547.438a.25.25 0 0 1-.313.011 5.378 5.378 0 0 1-1.285-1.147 4.108 4.108 0 0 1-.722-1.077.25.25 0 0 1 .046-.29l.394-.345a.5.5 0 0 0-.022-.663L8.118 7.932Z" clip-rule="evenodd" />
+    </svg>
 
-
-  <!-- 5. INQUIRY ROW ANCHOR -->
-  <!-- Placing the WhatsApp booking interaction directly at the bottom base of the welcome funnel -->
-  <div id="inquire" class="py-16 border-t border-stone-200/40 bg-stone-50/40 w-full full-bleed-container">
-    <WhatsAppBooking client:visible />
-  </div>
+    <!-- Subtle, clean luxury hover text chip tool-tip -->
+    <span class="absolute right-16 bg-stone-900 text-stone-100 font-sans text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-sm rounded-none border border-stone-800">
+      Book via WhatsApp
+    </span>
+  </a>
 
 </Layout>
-
-<style>
-  /* Quick helper to allow the contact block background to stretch pleasantly across the screen edge if needed */
-  .full-bleed-container {
-    box-shadow: 0 0 0 100vmax rgba(245, 242, 235, 0.4);
-    clip-path: inset(0 -100vmax);
-  }
-</style>
