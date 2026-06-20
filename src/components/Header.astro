@@ -3,33 +3,19 @@ import Menu from './Menu.astro';
 import Navigation from './Navigation.astro';
 import ThemeIcon from './ThemeIcon.astro';
 ---
-<!-- 
-  border-b border-stone-200/60: Adds a subtle, elegant divider line under the nav
-  bg-transparent: lets that gorgeous warm sand background color bleed through completely
--->
+
 <header class="border-b border-stone-200/60 bg-transparent w-full">
-  <!-- 
-    max-w-7xl mx-auto: perfectly matches the wide desktop framework width we set in the body global styles
-    flex items-center justify-between: pushes the branding/controls to one side and links to the other, vertically centered
-  -->
+
   <nav class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between py-4 md:py-6">
-    
-    <!-- Left/Mobile Control Cluster -->
     <div class="flex items-center justify-between w-full md:w-auto">
-      <!-- Brand Identity Text Layout -->
       <a href="/" class="font-serif text-lg tracking-widest text-stone-900 hover:text-stone-700 uppercase font-medium">
         Valle <span class="font-sans font-light text-stone-400">Resort</span>
       </a>
-      
-      <!-- Utility/Toggle buttons clustered neatly together on mobile -->
       <div class="flex items-center gap-4">
         <ThemeIcon />
-        <!-- The Menu button handles mobile toggle view logic via your tutorial JS -->
         <Menu />
       </div>
     </div>
-
-    <!-- Navigation Link Matrix (styled globally via global.css rules) -->
     <Navigation />
     
   </nav>

@@ -1,16 +1,66 @@
 ---
-const platform = "github"
-const username = "IsaacAGz";
 import Social from './Social.astro';
----
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 
-<footer>
-      <Social platform={platform} username={username} />
+// You can swap these placeholders out for your actual social platforms later!
+const platforms = [
+  { name: 'Instagram', username: 'casatorovalle' },
+  { name: 'Github', username: 'IsaacAGz' },
+];
+---
+
+<footer class="mt-20 border-t border-stone-200/60 bg-transparent pt-16 pb-12 font-sans">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mb-12">
+    
+    <!-- Column 1: Brand Statement & Geography -->
+    <div class="flex flex-col space-y-4">
+      <h3 class="font-serif text-lg tracking-widest uppercase text-stone-900 m-0 font-normal">
+        VALLE <span class="font-sans font-light text-stone-400">CABIN</span>
+      </h3>
+      <p class="text-xs text-stone-500 leading-relaxed max-w-xs m-0">
+        A refined architectural escape tucked into the boulder hills between Tecate and Ensenada.
+      </p>
+      <span class="text-[11px] uppercase tracking-wider text-stone-400">
+        Valle de Guadalupe, Baja California
+      </span>
+    </div>
+
+    <!-- Column 2: Secondary Quick Navigation Matrix -->
+    <div class="flex flex-col space-y-3">
+      <h4 class="text-xs uppercase tracking-widest text-stone-400 font-semibold m-0">
+        Explore
+      </h4>
+      <ul class="list-none p-0 m-0 space-y-2.5">
+        <li><a href="/about" class="text-xs text-stone-600 hover:text-stone-900 transition-colors normal-case tracking-normal font-normal">The Cabin</a></li>
+        <li><a href="/experiences" class="text-xs text-stone-600 hover:text-stone-900 transition-colors normal-case tracking-normal font-normal">Curated Experiences</a></li>
+        <li><a href="/location" class="text-xs text-stone-600 hover:text-stone-900 transition-colors normal-case tracking-normal font-normal">Location & Directions</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Social Connectivity & Contact -->
+    <div class="flex flex-col space-y-3">
+      <h4 class="text-xs uppercase tracking-widest text-stone-400 font-semibold m-0">
+        Connect With Us
+      </h4>
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
+        {platforms.map((p) => (
+          <Social platform={p.name} username={p.username} />
+        ))}
+      </div>
+      <p class="text-xs text-stone-400 m-0 pt-2">
+        Inquiries: <span class="text-stone-600 font-medium">stay@vallecabin.com</span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Sub-Footer Copyright Row -->
+  <div class="pt-8 border-t border-stone-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-[11px] text-stone-400 m-0 font-light">
+      &copy; {new Date().getFullYear()} Valle Cabin Retreat. All rights reserved.
+    </p>
+    <div class="flex gap-4">
+      <a href="/privacy" class="text-[11px] text-stone-400 hover:text-stone-600 normal-case tracking-normal font-normal">Privacy</a>
+      <a href="/terms" class="text-[11px] text-stone-400 hover:text-stone-600 normal-case tracking-normal font-normal">Terms</a>
+    </div>
+  </div>
 </footer>
