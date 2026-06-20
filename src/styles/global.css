@@ -137,35 +137,4 @@
     }
   }
 
-  /* --- Cozy Dark Mode (Valle Night/Stargazing Vibe) --- */
-  html.dark {
-    background-color: #12100e; 
-    color: #ece6e0;
-  }
-
-  .dark h1, .dark h2, .dark h3 {
-    color: #f4efe9;
-  }
-
-  .dark p {
-    color: #b4aba4;
-  }
-
-  .dark .menu {
-    @apply border-stone-200 bg-stone-200 text-stone-900;
-  }
-
-  .dark .nav-links a {
-    color: #ece6e0;
-    @apply border-stone-900;
-  }
-
-  .dark .nav-links a:hover {
-    background-color: #1e1b18;
-    color: #e07a5f;
-  }
-
-  .dark a {
-    color: #e07a5f; 
-  }
 }
