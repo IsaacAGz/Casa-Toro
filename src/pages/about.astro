@@ -1,8 +1,79 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "About Us";
+const pageTitle = "The Story — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Casa Toro</h2>
-</BaseLayout>
+  
+  <section class="py-16 max-w-3xl mx-auto text-center">
+    <span class="text-[10px] tracking-widest uppercase text-stone-400 font-sans block mb-3">Architectural Concept</span>
+    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide text-stone-900 m-0 mb-6 uppercase">
+      The Soul of Casa Toro
+    </h1>
+    <p class="font-serif italic text-lg text-stone-600 leading-relaxed m-0">
+      "Built not to disrupt the landscape, but to sit quietly within it."
+    </p>
+  </section>
+
+  <section class="space-y-20 my-12">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+          Raw Brutalism Meets Desert Warmth
+        </h2>
+        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+          Casa Toro was conceived as a monolithic sanctuary. Combining the industrial edge of board-formed concrete and weathered Corten steel with the organic textures of local stone and rough-sawn timbers, the cabin echoes the rugged textures of the Baja hills. Floor-to-ceiling glass panels dissolve the boundary between the interior comfort and the wild, sweeping valley below.
+        </p>
+      </div>
+      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+          alt="Modern concrete architectural details" 
+          class="w-full h-full object-cover grayscale opacity-90 contrast-110"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+      <div class="md:order-last">
+        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+          The Cradle of Baja Wine
+        </h2>
+        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+          Tucked neatly along the wine route between Tecate and Ensenada, Valle de Guadalupe offers a unique macroclimate where maritime breezes roll over the granite mountains to meet sun-baked soils. Casa Toro stands elevated over this vibrant ecosystem, offering panoramic, unobstructed views of centuries-old olive groves and sweeping, private estate vineyards.
+        </p>
+      </div>
+      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1504279577054-ac31641b8e4e?auto=format&fit=crop&w=800&q=80" 
+          alt="Vineyard hillsides in Baja" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+  </section>
+
+  <section class="bg-stone-900 text-stone-100 p-12 my-20 text-center font-sans">
+    <div class="max-w-xl mx-auto space-y-6">
+      <h3 class="text-xs uppercase tracking-widest text-stone-400 font-semibold m-0">Our Philosophy</h3>
+      <p class="text-sm md:text-base leading-loose text-stone-300 font-serif italic m-0">
+        "We believe luxury isn't about excess. It is about stillness, space, clear night skies, the rumbling roar of an engine on a dirt path, and a perfect glass of locally produced wine by an open fire."
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 text-center max-w-md mx-auto font-sans">
+    <h4 class="text-xs uppercase tracking-widest text-stone-400 font-bold mb-4">Ready to Experience It?</h4>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a 
+        href="/experiences" 
+        class="inline-block border border-stone-800 text-stone-900 px-6 py-3 text-xs uppercase tracking-widest font-semibold transition-all hover:bg-stone-900 hover:text-stone-50"
+      >
+        Explore Activities
+      </a>
+    </div>
+  </section>
+
+</Layout>
