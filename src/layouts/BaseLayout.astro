@@ -2,56 +2,55 @@
 // src/layouts/BaseLayout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import "../styles/global.css";
 
-// 1. Get the pageTitle passed from individual pages
 const { pageTitle } = Astro.props;
 
-// 2. Define global WhatsApp configurations
-const WHATSAPP_NUMBER = "5216461234567"; 
+// Global WhatsApp Configurations for Casa Toro
+const WHATSAPP_NUMBER = "16196001137";
 const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting your website and would love to check rates and availability for an upcoming stay.");
 ---
 
-<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <!-- Your global header component -->
-    <Header />
-    
-    <!-- This slot is where your individual page content gets injected -->
-    <slot /> 
-    
-    <!-- Your global footer component -->
-    <Footer />
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+		
+		</head>
+	<body>
+		<Header />
+		
+		<slot />
+		
+		<Footer />
 
-    <!-- --- 3. PERSISTENT GLOBAL WHATSAPP STICKY WIDGET --- -->
-    <a 
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${PREDEFINED_MESSAGE}`}
-      target="_blank" 
-      rel="noopener noreferrer"
-      aria-label="Inquire via WhatsApp"
-      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20ba5a] hover:scale-105 transition-all duration-300 group"
-    >
-      <!-- Crisp SVG WhatsApp Icon -->
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        fill="currentColor" 
-        class="w-7 h-7"
-      >
-        <path fill-rule="evenodd" d="M1.5 10.5a10.5 10.5 0 1 1 13.568 10.026l-4.14 1.183a.75.75 0 0 1-.926-.926l1.183-4.14A10.5 10.5 0 0 1 1.5 10.5Zm10.5-6a6 6 0 0 0-4.839 9.539.75.75 0 0 1 .082.518l-.66 2.308 2.308-.66a.75.75 0 0 1 .518.082A6 6 0 1 0 12 4.5ZM8.118 7.932a.5.5 0 0 0-.64-.067c-.366.257-.658.627-.818 1.057-.291.782-.095 1.83.606 2.898.673 1.025 1.574 1.868 2.585 2.428.847.469 1.765.651 2.476.388.423-.157.77-.472.998-.857a.5.5 0 0 0-.083-.615l-1.35-1.125a.5.5 0 0 0-.642-.01l-.547.438a.25.25 0 0 1-.313.011 5.378 5.378 0 0 1-1.285-1.147 4.108 4.108 0 0 1-.722-1.077.25.25 0 0 1 .046-.29l.394-.345a.5.5 0 0 0-.022-.663L8.118 7.932Z" clip-rule="evenodd" />
-      </svg>
+		<a 
+			href={`https://wa.me/${WHATSAPP_NUMBER}?text=${PREDEFINED_MESSAGE}`}
+			target="_blank" 
+			rel="noopener noreferrer"
+			aria-label="Inquire via WhatsApp"
+			class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20ba5a] hover:scale-105 transition-all duration-300 group"
+		>
+			<svg 
+				xmlns="http://www.w3.org/2000/svg" 
+				viewBox="0 0 24 24" 
+				fill="currentColor" 
+				class="w-7 h-7"
+			>
+				<path fill-rule="evenodd" d="M1.5 10.5a10.5 10.5 0 1 1 13.568 10.026l-4.14 1.183a.75.75 0 0 1-.926-.926l1.183-4.14A10.5 10.5 0 0 1 1.5 10.5Zm10.5-6a6 6 0 0 0-4.839 9.539.75.75 0 0 1 .082.518l-.66 2.308 2.308-.66a.75.75 0 0 1 .518.082A6 6 0 1 0 12 4.5ZM8.118 7.932a.5.5 0 0 0-.64-.067c-.366.257-.658.627-.818 1.057-.291.782-.095 1.83.606 2.898.673 1.025 1.574 1.868 2.585 2.428.847.469 1.765.651 2.476.388.423-.157.77-.472.998-.857a.5.5 0 0 0-.083-.615l-1.35-1.125a.5.5 0 0 0-.642-.01l-.547.438a.25.25 0 0 1-.313.011 5.378 5.378 0 0 1-1.285-1.147 4.108 4.108 0 0 1-.722-1.077.25.25 0 0 1 .046-.29l.394-.345a.5.5 0 0 0-.022-.663L8.118 7.932Z" clip-rule="evenodd" />
+			</svg>
 
-      <!-- Luxury hover text chip tooltip -->
-      <span class="absolute right-16 bg-stone-900 text-stone-100 font-sans text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-sm rounded-none border border-stone-800">
-        Book via WhatsApp
-      </span>
-    </a>
-  </body>
+			<span class="absolute right-16 bg-stone-900 text-stone-100 font-sans text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-sm border border-stone-800">
+				Book via WhatsApp
+			</span>
+		</a>
+
+		<script>
+			import "../scripts/menu.js";
+		</script>
+	</body>
 </html>
