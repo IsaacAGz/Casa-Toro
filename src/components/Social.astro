@@ -1,13 +1,12 @@
 ---
+// src/components/Social.astro
 const { platform, username } = Astro.props;
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #4c1d95;
-    text-decoration: none;
-  }
-</style>
+<a 
+  href={`https://www.${platform}.com/${username}`} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="text-xs text-stone-600 hover:text-b85c37 transition-colors normal-case tracking-normal font-normal underline underline-offset-4 decoration-stone-200 hover:decoration-current"
+>
+  {platform}
+</a>

@@ -1,10 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
-const pageTitle = "Home Page"
+import ExperienceGrid from '../components/ExperienceGrid.vue';
+import WhatsAppBooking from '../components/WhatsAppBooking.vue';
+
+const pageTitle = "Casa Toro — Luxury Rustic Cabin | Valle de Guadalupe";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Casa Toro</h2>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari", "Hi", "Hello", "Howdy", "Hey there"]} />
-</BaseLayout>
+
+  <!-- 1. THE HERO FRAME -->
+  <section class="relative w-full min-h-[70vh] flex flex-col justify-center items-center text-center px-4 py-16 border-b border-stone-200/40">
+    <span class="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-sans block mb-4 font-semibold">
+      Valle de Guadalupe, Mexico
+    </span>
+    
+    <!-- Massive editorial styling for the property name -->
+    <h1 class="text-5xl md:text-7xl font-serif text-stone-950 font-normal tracking-wide m-0 mb-6 uppercase">
+      Casa Toro
+    </h1>
+
+    <!-- Relocating the tutorial Greeting component to act as a hospitable dynamic subtitle -->
+    <div class="font-sans text-xs tracking-wider text-stone-500 uppercase flex items-center gap-1.5 mb-10">
+      <Greeting client:load messages={["Hola", "Welcome", "Howdy", "Hey there", "Bienvenido"]} /> 
+      <span>from our private vineyard estate.</span>
+    </div>
+
+    <!-- Minimalist Architectural Button -->
+    <a 
+      href="#inquire" 
+      class="px-8 py-3.5 bg-stone-900 text-stone-50 text-xs tracking-widest font-semibold uppercase border border-stone-900 transition-all hover:bg-transparent hover:text-stone-950 rounded-none"
+    >
+      Reserve Your Stay
+    </a>
+  </section>
+
+
+  <!-- 2. THE EDITORIAL OVERVIEW -->
+  <section class="max-w-3xl mx-auto text-center py-20 px-4">
+    <h2 class="border-none font-serif text-2xl md:text-3xl italic text-stone-800 font-normal leading-relaxed m-0 mb-6">
+      "An architectural sanctuary shaped by raw concrete, weathered iron, and the rolling dust of Baja's premium wine country."
+    </h2>
+    <p class="font-sans text-stone-600 text-sm md:text-base leading-loose max-w-2xl mx-auto m-0">
+      Perched dramatically on the boulder-lined hillsides between Tecate and Ensenada, Casa Toro offers an unfiltered connection to nature without sacrificing modern sophistication. Spend your mornings navigating rugged dirt trails on sport motorcycles, your afternoons sampling bold local Nebbiolos, and your nights isolated under some of the darkest stargazing skies in North America.
+    </p>
+  </section>
+
+
+  <!-- 3. AT A GLANCE AMENITIES KEY -->
+  <section class="border-y border-stone-200/60 py-8 my-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto font-sans">
+      <div class="flex flex-col">
+        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Infinity Pool</span>
+        <span class="text-[11px] text-stone-400 mt-1 font-light">Heated Stone Soaking</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Dark Skies</span>
+        <span class="text-[11px] text-stone-400 mt-1 font-light">Tracking Telescope</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Target Range</span>
+        <span class="text-[11px] text-stone-400 mt-1 font-light">Archery & Rifles</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xs font-semibold tracking-widest text-stone-900 uppercase">Motorcycles</span>
+        <span class="text-[11px] text-stone-400 mt-1 font-light">Dual-Sport Trails</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4. THE EXPERIENCE MATRIX -->
+  <!-- Mounts our interactive Vue grid component seamlessly when it enters the viewport -->
+  <div class="py-12">
+    <ExperienceGrid client:visible />
+  </div>
+
+
+  <!-- 5. INQUIRY ROW ANCHOR -->
+  <!-- Placing the WhatsApp booking interaction directly at the bottom base of the welcome funnel -->
+  <div id="inquire" class="py-16 border-t border-stone-200/40 bg-stone-50/40 w-full full-bleed-container">
+    <WhatsAppBooking client:visible />
+  </div>
+
+</Layout>
+
+<style>
+  /* Quick helper to allow the contact block background to stretch pleasantly across the screen edge if needed */
+  .full-bleed-container {
+    box-shadow: 0 0 0 100vmax rgba(245, 242, 235, 0.4);
+    clip-path: inset(0 -100vmax);
+  }
+</style>
