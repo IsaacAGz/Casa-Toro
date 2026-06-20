@@ -69,7 +69,7 @@
     color: #703217;
   }
 
-  /* --- Refined Minimalist Navigation (Valle Luxury Style) --- */
+/* --- Animated Tutorial Navigation Styles --- */
   .menu {
     @apply px-5 py-2.5 border border-stone-800 font-sans text-xs font-semibold tracking-widest uppercase rounded-none transition-all;
     background-color: #2e251f;
@@ -77,14 +77,17 @@
     cursor: pointer;
   }
   
-  .menu:hover {
-    @apply bg-transparent text-stone-900;
-  }
-
+  /* 1. Set the initial closed state using clip/height constraints instead of display:none */
   .nav-links {
     width: 100%;
-    display: none;
-    margin: 1.5rem 0 0 0;
+    max-height: 0;         /* Collapsed height block */
+    opacity: 0;            /* Invisible */
+    overflow: hidden;      /* Hides content expanding outside bounds */
+    margin: 0;
+    /* Smooth cubic bezier transition curves for a luxury, fluid spring effect */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease, 
+                margin 0.3s ease;
   }
 
   .nav-links a {
@@ -101,13 +104,20 @@
     color: #b85c37;
   }
 
+ /* 2. Slide open when the button toggles aria-expanded to true */
   :has(.menu[aria-expanded="true"]) .nav-links {
-    display: block;
+    max-height: 300px;     /* Give it enough room to fully unfold your link rows */
+    opacity: 1;            /* Fade in completely */
+    margin-top: 1.5rem;    /* Smoothly add top spacing breathing room */
   }
 
+  /* 3. Handle Desktop overrides cleanly */
   @media screen and (min-width: 636px) {
     .nav-links {
       display: flex !important;
+      max-height: none !important; /* Disables height capping on wide displays */
+      opacity: 1 !important;        /* Keeps links consistently visible */
+      overflow: visible !important;
       justify-content: flex-end;
       gap: 2.5rem;
       margin: 0;
@@ -120,6 +130,10 @@
     
     .nav-links a:hover {
       background-color: transparent;
+    }
+
+    .menu {
+      display: none;
     }
   }
 
