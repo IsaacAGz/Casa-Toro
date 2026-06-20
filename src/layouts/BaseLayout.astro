@@ -7,10 +7,9 @@ import "../styles/global.css";
 const { pageTitle } = Astro.props;
 
 // Global WhatsApp Configurations for Casa Toro
-const WHATSAPP_NUMBER = "16196001137";
+const WHATSAPP_NUMBER = "16196001137;
 const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting your website and would love to check rates and availability for an upcoming stay.");
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -19,8 +18,14 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style>
+			h1 {
+				color: brown;
+				font-size: 4rem;
+			}
+		</style>
 		
-		</head>
+	</head>
 	<body>
 		<Header />
 		
