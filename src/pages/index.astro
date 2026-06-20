@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
 import ExperienceGrid from '../components/ExperienceGrid.vue';
 
 const pageTitle = "Casa Toro — Luxury Rustic Retreat";
@@ -23,11 +22,6 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
     <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide text-stone-900 m-0 mb-6 uppercase">
       Casa Toro
     </h1>
-
-    <!-- Polished Tutorial Greeting Element integration -->
-    <div class="font-sans text-xs tracking-wider text-stone-500 uppercase mb-8 inline-block bg-stone-100 px-4 py-2 border border-stone-200/40">
-      <Greeting client:load messages={["Hola", "Welcome", "Howdy", "Bienvenido"]} />, guest.
-    </div>
 
     <p class="font-serif italic text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto m-0">
       "Where raw architectural minimalism meets the sun-baked, rustic soul of Mexico's premier wine valley."
