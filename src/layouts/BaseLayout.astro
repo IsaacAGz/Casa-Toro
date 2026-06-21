@@ -21,7 +21,14 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
 		<title>{pageTitle}</title>
 		<ClientRouter />
 	</head>
-	<body>
+	<body class="relative min-h-screen">
+
+		<div 
+			class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.04] dark:opacity-[0.02] bg-cover bg-center bg-no-repeat bg-fixed"
+			style="background-image: url('https://images.unsplash.com/photo-1504279577054-ac31641b8e4e?auto=format&fit=crop&w=1920&q=80');"
+		>
+		</div>
+
 		<Header />
 		<main transition:animate="fade">
 			<slot />
