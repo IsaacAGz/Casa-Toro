@@ -4,15 +4,51 @@
 @theme {
   /* This configures your premium resort typography inside Tailwind v4 */
   --font-serif: 'Playfair Display', 'Didot', Georgia, serif;
+
+  /* ==========================================================================
+     LUXURY-RUSTIC DESIGN TOKENS (LIGHT MODE DEFAULT)
+     ========================================================================== */
+  --color-bg-primary: #faf8f5;       /* Soft, creamy linen white */
+  --color-bg-surface: #ffffff;       /* Pure white for cards/forms */
+  --color-bg-tint: #f5f0e6;          /* Warm sand tint for highlights */
+  
+  --color-text-main: #1c1917;        /* Deep stone charcoal for readability */
+  --color-text-title: #2e251f;       /* Dark soil tone for luxury editorial headers */
+  --color-text-muted: #57524e;       /* Muted earth gray */
+  --color-text-light: #a8a29e;       /* Light stone for subtle text metadata */
+  
+  --color-border-main: rgba(28, 25, 23, 0.1); /* Soft transparent structural lines */
+  --color-accent: #b85c37;           /* Rustic terracotta clay accent */
+  --color-accent-hover: #703217;     /* Deeper baked clay variant */
+
+  /* ==========================================================================
+     PREMIUM DARK MODE DESIGN TOKENS
+     ========================================================================== */
+  @variant dark (&:where(.dark, .dark *)) {
+    --color-bg-primary: #12100e;       /* Deep, midnight obsidian black */
+    --color-bg-surface: #1c1917;       /* Rich stone charcoal for elevated containers */
+    --color-bg-tint: #262220;          /* Warm dark clay for hovers/inner borders */
+    
+    --color-text-main: #faf8f5;        /* Soft warm cream text */
+    --color-text-title: #faf8f5;       /* Clear high-contrast title layers */
+    --color-text-muted: #a8a29e;       /* Light clay gray for structural descriptions */
+    --color-text-light: #57524e;       /* Dark sand for metadata */
+    
+    --color-border-main: rgba(245, 240, 230, 0.15); /* Delicate light linen border vectors */
+    --color-accent: #e07a5f;           /* Brighter, glowing terracotta accent */
+    --color-accent-hover: #f29479;     /* Soft text illumination variant */
+  }
 }
 
 @layer base {
   html {
-    background-color: #faf8f5; 
+    background-color: var(--color-bg-primary); 
     font-family: var(--font-serif);
-    color: #1e1b18; 
+    color: var(--color-text-main); 
     scroll-behavior: smooth;
     box-sizing: border-box;
+    /* Smooth linear color transition on global theme modification swaps */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
@@ -33,7 +69,8 @@
   h1, h2, h3 {
     font-weight: 600;
     letter-spacing: -0.01em;
-    color: #2e251f; 
+    color: var(--color-text-title);
+    transition: color 0.3s ease;
   }
 
   h1 { 
@@ -41,10 +78,13 @@
     font-weight: 400; 
   }
   h2 { 
-    @apply text-2xl mt-12 mb-6 border-b border-stone-200 pb-3 font-normal tracking-wide; 
+    @apply text-2xl mt-12 mb-6 pb-3 font-normal tracking-wide; 
+    border-b: 1px solid var(--color-border-main);
+    transition: border-color 0.3s ease, color 0.3s ease;
   }
   h3 { 
-    @apply text-xl mt-8 mb-3 tracking-normal font-sans font-semibold text-stone-800; 
+    @apply text-xl mt-8 mb-3 tracking-normal font-sans font-semibold; 
+    color: var(--color-text-muted);
   }
 
   @media (min-width: 768px) {
@@ -54,27 +94,35 @@
   }
 
   p {
-    @apply mb-5 text-stone-600 leading-loose;
+    @apply mb-5 leading-loose;
+    color: var(--color-text-muted);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; 
     font-size: 1.05rem;
+    transition: color 0.3s ease;
   }
 
   /* Global Accent Links & Buttons */
   a {
-    color: #b85c37; 
+    color: var(--color-accent);
     @apply transition-colors duration-200 no-underline tracking-wide font-sans text-sm uppercase font-semibold;
   }
 
   a:hover {
-    color: #703217;
+    color: var(--color-accent-hover);
   }
 
-/* --- Animated Tutorial Navigation Styles --- */
+  /* --- Animated Navigation Styles --- */
   .menu {
-    @apply px-5 py-2.5 border border-stone-800 font-sans text-xs font-semibold tracking-widest uppercase rounded-none transition-all;
-    background-color: #2e251f;
-    color: #faf8f5;
+    @apply px-5 py-2.5 font-sans text-xs font-semibold tracking-widest uppercase rounded-none transition-all;
+    border: 1px solid var(--color-text-main);
+    background-color: var(--color-text-title);
+    color: var(--color-bg-primary);
     cursor: pointer;
+  }
+
+  .menu:hover {
+    background-color: transparent;
+    color: var(--color-text-main);
   }
   
   /* 1. Set the initial closed state using clip/height constraints instead of display:none */
@@ -95,16 +143,18 @@
     text-align: center;
     padding: 14px 0;
     font-family: system-ui, -apple-system, sans-serif;
-    @apply text-xs tracking-widest uppercase text-stone-700 border-b border-stone-100;
+    color: var(--color-text-muted);
+    border-b: 1px solid var(--color-border-main);
+    @apply text-xs tracking-widest uppercase;
   }
 
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #f5f0e6;
-    color: #b85c37;
+    background-color: var(--color-bg-tint);
+    color: var(--color-accent);
   }
 
- /* 2. Slide open when the button toggles aria-expanded to true */
+  /* 2. Slide open when the button toggles aria-expanded to true */
   :has(.menu[aria-expanded="true"]) .nav-links {
     max-height: 300px;     /* Give it enough room to fully unfold your link rows */
     opacity: 1;            /* Fade in completely */
@@ -125,7 +175,9 @@
 
     .nav-links a {
       display: inline-block;
-      @apply p-0 border-none bg-transparent normal-case;
+      border-bottom: none;
+      background-color: transparent;
+      @apply p-0 normal-case;
     }
     
     .nav-links a:hover {
@@ -136,5 +188,4 @@
       display: none;
     }
   }
-
 }
