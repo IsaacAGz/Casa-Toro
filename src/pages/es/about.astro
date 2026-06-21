@@ -1,17 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const pageTitle = "Nuestra Historia";
+const pageTitle = "Nuestra Historia — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   
   <!-- --- CAPÍTULO 1: LA VISIÓN (HERO INTRO) --- -->
   <section class="py-16 max-w-3xl mx-auto text-center">
-    <span class="text-[10px] tracking-widest uppercase text-stone-400 font-sans block mb-3">Concepto Arquitectónico</span>
-    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide text-stone-900 m-0 mb-6 uppercase">
+    <span class="text-[10px] tracking-widest uppercase text-text-light font-sans block mb-3">
+      Concepto Arquitectónico
+    </span>
+    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide m-0 mb-6 uppercase">
       El Alma de Casa Toro
     </h1>
-    <p class="font-serif italic text-lg text-stone-600 leading-relaxed m-0">
+    <p class="font-serif italic text-lg leading-relaxed m-0">
       "Diseñado no para irrumpir en el paisaje, sino para habitar silenciosamente en él."
     </p>
   </section>
@@ -22,14 +24,14 @@ const pageTitle = "Nuestra Historia";
     <!-- Bloque A: La Arquitectura -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+        <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase">
           Brutalismo Puro y Calidez del Desierto
         </h2>
-        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+        <p class="font-sans text-sm leading-loose m-0">
           Casa Toro fue concebida como un santuario monolítico. Combinando la fuerza industrial del concreto enduelado y el acero corten oxidado con las texturas orgánicas de la piedra local y maderas en bruto, la cabaña emula el entorno de las colinas de Baja California. Los ventanales de piso a techo disuelven la frontera entre el confort interior y la imponente naturaleza del valle.
         </p>
       </div>
-      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+      <div class="aspect-[4/3] bg-bg-surface border border-border-main overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
           alt="Detalles arquitectónicos de concreto moderno" 
@@ -41,14 +43,14 @@ const pageTitle = "Nuestra Historia";
     <!-- Bloque B: El Terruño y la Región -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div class="md:order-last">
-        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+        <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase">
           La Cuna del Vino en Baja
         </h2>
-        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+        <p class="font-sans text-sm leading-loose m-0">
           Ubicada estratégicamente en la ruta del vino entre Tecate y Ensenada, el Valle de Guadalupe ofrece un microclima único donde las brisas marinas cruzan las montañas de granito para encontrarse con tierras celosamente cuidadas. Casa Toro se eleva sobre este ecosistema, ofreciendo vistas panorámicas despejadas a los olivares centenarios y los viñedos privados de la región.
         </p>
       </div>
-      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+      <div class="aspect-[4/3] bg-bg-surface border border-border-main overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1504279577054-ac31641b8e4e?auto=format&fit=crop&w=800&q=80" 
           alt="Colinas de viñedos en Baja" 
@@ -59,11 +61,13 @@ const pageTitle = "Nuestra Historia";
 
   </section>
 
-  <!-- --- CAPÍTULO 3: EL MANIFIESTO --- -->
-  <section class="bg-stone-900 text-stone-100 p-12 my-20 text-center font-sans">
+  <!-- --- CAPÍTULO 3: EL MANIFIESTO (Sincronizado con el contenedor de superficie) --- -->
+  <section class="bg-bg-surface border-y border-border-main p-12 my-20 text-center font-sans transition-colors duration-300">
     <div class="max-w-xl mx-auto space-y-6">
-      <h3 class="text-xs uppercase tracking-widest text-stone-400 font-semibold m-0">Nuestra Filosofía</h3>
-      <p class="text-sm md:text-base leading-loose text-stone-300 font-serif italic m-0">
+      <h3 class="text-xs uppercase tracking-widest text-text-light font-semibold m-0">
+        Nuestra Filosofía
+      </h3>
+      <p class="text-sm md:text-base leading-loose font-serif italic m-0">
         "Creemos que el lujo no se trata de excesos. Se trata de quietud, espacio, cielos nocturnos despejados, el rugir de un motor en caminos de tierra y una copa perfecta de vino local junto al fuego."
       </p>
     </div>
@@ -71,11 +75,13 @@ const pageTitle = "Nuestra Historia";
 
   <!-- --- CAPÍTULO 4: LLAMADO A LA ACCIÓN --- -->
   <section class="py-12 text-center max-w-md mx-auto font-sans">
-    <h4 class="text-xs uppercase tracking-widest text-stone-400 font-bold mb-4">¿Listo para vivir la experiencia?</h4>
+    <h4 class="text-xs uppercase tracking-widest text-text-light font-bold mb-4">
+      ¿Listo para vivir la experiencia?
+    </h4>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a 
         href="/es/reviews" 
-        class="inline-block border border-stone-800 text-stone-900 px-6 py-3 text-xs uppercase tracking-widest font-semibold transition-all hover:bg-stone-900 hover:text-stone-50"
+        class="inline-block border border-text-main text-text-main px-6 py-3 text-xs uppercase tracking-widest font-semibold transition-all hover:bg-text-title hover:text-bg-primary rounded-none"
       >
         Ver Experiencias
       </a>

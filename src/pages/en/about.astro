@@ -5,25 +5,33 @@ const pageTitle = "Our Story";
 
 <BaseLayout pageTitle={pageTitle}>
   
+  <!-- --- CHAPTER 1: THE VISION (INTRO HERO) --- -->
   <section class="py-16 max-w-3xl mx-auto text-center">
-    <span class="text-[10px] tracking-widest uppercase text-stone-400 font-sans block mb-3">Architectural Concept</span>
-    <p class="font-serif italic text-lg text-stone-600 leading-relaxed m-0">
+    <span class="text-[10px] tracking-widest uppercase font-sans block mb-3" style="color: var(--color-text-light);">
+      Architectural Concept
+    </span>
+    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide m-0 mb-6 uppercase" style="color: var(--color-text-title);">
+      The Soul of Casa Toro
+    </h1>
+    <p class="font-serif italic text-lg leading-relaxed m-0" style="color: var(--color-text-muted);">
       "Built not to disrupt the landscape, but to sit quietly within it."
     </p>
   </section>
 
+  <!-- --- CHAPTER 2: THE SPLIT STORY MATRIX --- -->
   <section class="space-y-20 my-12">
     
+    <!-- Block A: The Architecture -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+        <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase" style="color: var(--color-text-title);">
           Raw Brutalism Meets Desert Warmth
         </h2>
-        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+        <p class="font-sans text-sm leading-loose m-0" style="color: var(--color-text-muted);">
           Casa Toro was conceived as a monolithic sanctuary. Combining the industrial edge of board-formed concrete and weathered Corten steel with the organic textures of local stone and rough-sawn timbers, the cabin echoes the rugged textures of the Baja hills. Floor-to-ceiling glass panels dissolve the boundary between the interior comfort and the wild, sweeping valley below.
         </p>
       </div>
-      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+      <div class="aspect-[4/3] overflow-hidden" style="background-color: var(--color-bg-surface); border: 1px solid var(--color-border-main);">
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
           alt="Modern concrete architectural details" 
@@ -32,16 +40,17 @@ const pageTitle = "Our Story";
       </div>
     </div>
 
+    <!-- Block B: The Terroir & Region -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div class="md:order-last">
-        <h2 class="font-serif text-2xl md:text-3xl font-normal text-stone-900 m-0 mb-4 border-none p-0 tracking-wide uppercase">
+        <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase" style="color: var(--color-text-title);">
           The Cradle of Baja Wine
         </h2>
-        <p class="font-sans text-sm text-stone-600 leading-loose m-0">
+        <p class="font-sans text-sm leading-loose m-0" style="color: var(--color-text-muted);">
           Tucked neatly along the wine route between Tecate and Ensenada, Valle de Guadalupe offers a unique macroclimate where maritime breezes roll over the granite mountains to meet sun-baked soils. Casa Toro stands elevated over this vibrant ecosystem, offering panoramic, unobstructed views of centuries-old olive groves and sweeping, private estate vineyards.
         </p>
       </div>
-      <div class="aspect-[4/3] bg-stone-100 border border-stone-200/60 overflow-hidden">
+      <div class="aspect-[4/3] overflow-hidden" style="background-color: var(--color-bg-surface); border: 1px solid var(--color-border-main);">
         <img 
           src="https://images.unsplash.com/photo-1504279577054-ac31641b8e4e?auto=format&fit=crop&w=800&q=80" 
           alt="Vineyard hillsides in Baja" 
@@ -52,16 +61,26 @@ const pageTitle = "Our Story";
 
   </section>
 
+  <!-- --- CHAPTER 3: CALL TO ACTION FOOTER --- -->
   <section class="py-12 text-center max-w-md mx-auto font-sans">
-    <h4 class="text-xs uppercase tracking-widest text-stone-400 font-bold mb-4">Ready to Experience It?</h4>
+    <h4 class="text-xs uppercase tracking-widest font-bold mb-4" style="color: var(--color-text-light);">
+      Ready to Experience It?
+    </h4>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a 
-        href="/experiences" 
-        class="inline-block border border-stone-800 text-stone-900 px-6 py-3 text-xs uppercase tracking-widest font-semibold transition-all hover:bg-stone-900 hover:text-stone-50"
+        href="/en/experiences" 
+        class="inline-block px-6 py-3 text-xs uppercase tracking-widest font-semibold transition-all rounded-none"
+        style="
+          border: 1px solid var(--color-text-main); 
+          color: var(--color-text-main); 
+          background-color: transparent;
+        "
+        onmouseover="this.style.backgroundColor='var(--color-text-title)'; this.style.color='var(--color-bg-primary)'"
+        onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--color-text-main)'"
       >
         Explore Activities
       </a>
     </div>
   </section>
 
-</Layout>
+</BaseLayout>

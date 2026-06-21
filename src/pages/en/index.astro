@@ -10,39 +10,39 @@ const pageTitle = "Casa Toro";
   <!-- --- HERO STATEMENT HEADER --- -->
   <section class="pt-16 pb-20 text-center max-w-4xl mx-auto">
     <div class="flex items-center justify-center gap-3 mb-4">
-      <span class="w-8 h-px bg-stone-300"></span>
-      <span class="text-[10px] tracking-widest uppercase text-stone-400 font-sans font-semibold">
+      <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
+      <span class="text-[10px] tracking-widest uppercase font-sans font-semibold" style="color: var(--color-text-light);">
         Valle de Guadalupe, B.C.
       </span>
-      <span class="w-8 h-px bg-stone-300"></span>
+      <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
     </div>
     
-    <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide text-stone-900 m-0 mb-6 uppercase">
+    <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide m-0 mb-6 uppercase" style="color: var(--color-text-title);">
       Luxury Rustic Retreat
     </h1>
 
-    <p class="font-serif italic text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto m-0">
+    <p class="font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto m-0" style="color: var(--color-text-muted);">
       "Where raw architectural minimalism meets the sun-baked, rustic soul of Mexico's premier wine valley."
     </p>
   </section>
 
   <!-- --- THE OVERVIEW FRAME (LUXURY HOVER BLOCKS) --- -->
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-b border-stone-200/60 py-10 my-12 font-sans">
-    <div class="text-center md:text-left">
-      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Setting</h4>
-      <p class="text-sm text-stone-700 m-0 leading-relaxed">Perched on private boulder ridges flanked by old-growth vineyard rows between Tecate and Ensenada.</p>
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 my-12 font-sans text-center md:text-left" style="border-top: 1px solid var(--color-border-main); border-bottom: 1px solid var(--color-border-main);">
+    <div>
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">The Setting</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Perched on private boulder ridges flanked by old-growth vineyard rows between Tecate and Ensenada.</p>
     </div>
-    <div class="text-center md:text-left border-y md:border-y-0 md:border-x border-stone-200/40 py-6 md:py-0 md:px-8">
-      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Sanctuary</h4>
-      <p class="text-sm text-stone-700 m-0 leading-relaxed">Featuring modern concrete features, raw structural timbers, custom stone infinity hot tub, and stargazing deck.</p>
+    <div class="border-y md:border-y-0 md:border-x py-6 md:py-0 md:px-8" style="border-color: var(--color-border-main);">
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">The Sanctuary</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Featuring modern concrete features, raw structural timbers, custom stone infinity hot tub, and stargazing deck.</p>
     </div>
-    <div class="text-center md:text-left md:pl-4">
-      <h4 class="text-[11px] uppercase tracking-widest text-stone-400 font-bold m-0 mb-1">The Horizon</h4>
-      <p class="text-sm text-stone-700 m-0 leading-relaxed">Direct access to mountain off-road motorcycle loops, tactical rifle lines, and archery target fields.</p>
+    <div class="md:pl-4">
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">The Horizon</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Direct access to mountain off-road motorcycle loops, tactical rifle lines, and archery target fields.</p>
     </div>
   </section>
 
   <!-- --- EXPERIENCE GALLERY MATRIX --- -->
   <ExperienceGrid client:visible />
 
-</Layout>
+</BaseLayout>
