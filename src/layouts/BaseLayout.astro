@@ -19,21 +19,14 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-		<style>
-			h1 {
-				color: brown;
-				font-size: 4rem;
-			}
-		</style>
 		<ClientRouter />
 	</head>
 	<body>
 		<Header />
+		<h1>{pageTitle}</h1>
 		<main transition:animate="fade">
 			<slot />
-		</main>
-		<h1>{pageTitle}</h1>
-		
+		</main>	
 		<Footer />
 
 		<a 
