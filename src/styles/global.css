@@ -22,9 +22,9 @@
   --color-accent-hover: #703217;     /* Deeper baked clay variant */
 
   /* ==========================================================================
-     PREMIUM DARK MODE DESIGN TOKENS
+     PREMIUM DARK MODE DESIGN TOKENS (TAILWIND v4 CLEAN SYNTAX)
      ========================================================================== */
-  @variant dark (&:where(.dark, .dark *)) {
+  @variant dark {
     --color-bg-primary: #12100e;       /* Deep, midnight obsidian black */
     --color-bg-surface: #1c1917;       /* Rich stone charcoal for elevated containers */
     --color-bg-tint: #262220;          /* Warm dark clay for hovers/inner borders */
