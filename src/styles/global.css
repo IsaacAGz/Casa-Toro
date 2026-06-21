@@ -22,9 +22,9 @@
   --color-bg-tint: #262220;
 
   --color-text-main: #faf8f5;
-  --color-text-title: #faf8f5;
-  --color-text-muted: #faf8f5;
-  --color-text-light: #faf8f5;
+  --color-text-title: #6d6d6d;
+  --color-text-muted: #6d6d6d;
+  --color-text-light: #6d6d6d;
 
   --color-border-main: rgba(245, 240, 230, 0.15);
   --color-accent: #e07a5f;
