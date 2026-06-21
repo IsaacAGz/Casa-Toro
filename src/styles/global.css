@@ -1,21 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --font-serif: 'Playfair Display', 'Didot', Georgia, serif;
-
-  /* Light mode defaults */
-  --color-bg-primary: #faf8f5;
-  --color-bg-surface: #ffffff;
-  --color-bg-tint: #f5f0e6;
-
-  --color-text-main: #1c1917;
-  --color-text-title: #2e251f;
-  --color-text-muted: #57524e;
-  --color-text-light: #a8a29e;
-
-  --color-border-main: rgba(28, 25, 23, 0.1);
-  --color-accent: #b85c37;
-  --color-accent-hover: #703217;
+:root {
+  --color-bg-primary: #faf8f5;       /* Soft, creamy linen white */
+  --color-bg-surface: #ffffff;       /* Pure white for cards/forms */
+  --color-bg-tint: #f5f0e6;          /* Warm sand tint for highlights */
+  
+  --color-text-main: #1c1917;        /* Deep stone charcoal for readability */
+  --color-text-title: #2e251f;       /* Dark soil tone for luxury editorial headers */
+  --color-text-muted: #57524e;       /* Muted earth gray */
+  --color-text-light: #a8a29e;       /* Light stone for subtle text metadata */
+  
+  --color-border-main: rgba(28, 25, 23, 0.1); /* Soft transparent structural lines */
+  --color-accent: #b85c37;           /* Rustic terracotta clay accent */
+  --color-accent-hover: #703217;     /* Deeper baked clay variant */
 }
 
 /* Dark mode overrides */
@@ -26,8 +23,8 @@
 
   --color-text-main: #faf8f5;
   --color-text-title: #faf8f5;
-  --color-text-muted: #a8a29e;
-  --color-text-light: #57524e;
+  --color-text-muted: #faf8f5;
+  --color-text-light: #faf8f5;
 
   --color-border-main: rgba(245, 240, 230, 0.15);
   --color-accent: #e07a5f;
