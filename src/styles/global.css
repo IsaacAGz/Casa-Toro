@@ -33,17 +33,20 @@
 
 @layer base {
   html {
-  font-family: var(--font-serif);
-  color: var(--color-text-main); 
-  scroll-behavior: smooth;
-  box-sizing: border-box;
+    background-color: var(--color-bg-primary); 
+    font-family: var(--font-serif);
+    color: var(--color-text-main); 
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* Smooth linear color transition on global theme modification swaps */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
     margin: 0 auto;
     width: 100%;
-  
-    background-color: transparent; 
+    /* In Tailwind v4, complex responsive classes should be written natively 
+       in regular CSS media queries instead of combining them into a single @apply */
     @apply max-w-7xl px-6 py-8 leading-relaxed;
   }
   
