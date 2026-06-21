@@ -1,0 +1,22 @@
+---
+// src/components/LangToggle.astro
+const { url } = Astro;
+const { pathname } = url;
+
+// Determine current language based on the URL pathway prefix
+const isSpanish = pathname.startsWith('/es');
+
+// Swap the URL prefix dynamically while preserving the rest of the page route path
+const targetPath = isSpanish 
+  ? pathname.replace('/es', '/en') 
+  : pathname.startsWith('/en') 
+    ? pathname.replace('/en', '/es')
+    : `/es${pathname}`; // Fallback if root path
+---
+
+<a 
+  href={targetPath}
+  class="font-sans text-[11px] tracking-widest uppercase text-stone-600 hover:text-stone-900 font-semibold border border-stone-200 px-2.5 py-1 transition-all hover:bg-stone-50"
+>
+  {isSpanish ? 'EN' : 'ES'}
+</a>

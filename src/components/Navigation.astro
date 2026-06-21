@@ -1,9 +1,26 @@
 ---
+// src/components/Navigation.astro
+const { pathname } = Astro.url;
+const langPrefix = pathname.startsWith('/es') ? '/es' : '/en';
+
+// Define translated path links arrays dynamically
+const links = langPrefix === '/es' 
+  ? [
+      { href: `${langPrefix}/`, label: 'Inicio' },
+      { href: `${langPrefix}/about`, label: 'Nosotros' },
+      { href: `${langPrefix}/location`, label: 'Ruta' },
+      { href: `${langPrefix}/reviews`, label: 'Reseñas' }
+    ]
+  : [
+      { href: `${langPrefix}/`, label: 'Home' },
+      { href: `${langPrefix}/about`, label: 'About' },
+      { href: `${langPrefix}/location`, label: 'Location' },
+      { href: `${langPrefix}/reviews`, label: 'Reviews' }
+    ];
 ---
-<div id="main-menu" class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/reviews/">Reviews</a>
-    <a href="/experiences/">Experiences</a>
-    <a href="/location/">Location</a>
+
+<div class="nav-links">
+  {links.map(link => (
+    <a href={link.href}>{link.label}</a>
+  ))}
 </div>
