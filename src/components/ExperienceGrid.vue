@@ -30,7 +30,7 @@
       <div 
         v-for="exp in filteredExperiences" 
         :key="exp.id"
-        class="group bg-white border border-stone-100 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md hover:border-stone-200"
+        class="group bg-white border border-stone-500 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md hover:border-stone-200"
       >
         <!-- Card Cover Frame Layout -->
         <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
@@ -99,11 +99,11 @@ const experiences = ref([
   },
   {
     id: 4,
-    title: "Infinity Pool & Hot Tub",
+    title: "Pool",
     category: "relaxation",
-    description: "Soak inside an architectural stone hot tub seamlessly overflowing directly into an elegant vista facing endless lines of vines.",
-    highlight: "Heated 24/7 via local wood boiler",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"
+    description: "A private, heated pool with a panoramic view of the surrounding desert and mountains, perfect for sunbathing or romantic evenings.",
+    highlight: "Heating available year-round",
+    image: "/images/pool.jpeg"
   },
   {
     id: 5,
@@ -112,14 +112,6 @@ const experiences = ref([
     description: "Test your focus on our raw wood field range using custom hand-carved recurve bows and arrows alongside specialized instructions.",
     highlight: "All skill levels welcome",
     image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 6,
-    title: "Tactical Target Ranges",
-    category: "adventure",
-    description: "An isolated, sound-buffered open valley safe space for sports shooting, precise lever-action rifle challenges, and clay throwing.",
-    highlight: "Strict safety protocols enforced",
-    image: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?auto=format&fit=crop&w=800&q=80"
   }
 ]);
 
