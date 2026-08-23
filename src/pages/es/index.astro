@@ -6,70 +6,39 @@ const pageTitle = "Casa Toro — Refugio de Lujo Rústico";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  
-  <!-- --- SECCIÓN HERO --- -->
-  <section 
-    class="-mx-6 md:-mx-12 w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] min-h-screen flex items-start justify-center pt-24 md:pt-64 bg-contain bg-center bg-no-repeat bg-[url('/images/hero-bg.jpeg')]"
-  >
-    <div class="relative w-full pt-16 pb-20 text-center">
-      
-      <!-- Inner Container (Restores readable max-width for text) -->
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="w-8 h-px bg-slate-900"></span>
-          <span class="text-[10px] tracking-widestfo uppercase nt-sans font-semibold text-stone-900">
-            Valle de Guadalupe, B.C.
-          </span>
-          <span class="w-8 h-px bg-slate-900"></span>
-        </div>
-        
-        <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide m-0 mb-6 uppercase text-black">
-          Casa Toro
-        </h1>
 
-        <p class="font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto m-0 text-black">
-          "Donde el minimalismo arquitectónico puro se encuentra con el alma rústica y cálida de la zona vinícola más importante de México."
-        </p>
-      </div>
-
+    <!-- --- SECCIÓN HERO --- -->
+  <section class="select-none focus:outline-none relative pt-24 pb-24 text-center max-w-none mx-auto">
+    <div class="flex items-center justify-center gap-3">
+      <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
+      <span class="text-[10px] tracking-widest uppercase font-sans font-semibold" style="color: var(--color-text-light);">
+        Valle de Guadalupe, B.C.
+      </span>
+      <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
     </div>
+    
+    <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide m-0 mb-6 uppercase" style="color: var(--color-text-title);">
+      CASA TORO
+    </h1>
+
+    <p class="font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto m-0" style="color: var(--color-text-muted);">
+      Donde el minimalismo arquitectónico puro se encuentra con el alma rústica y cálida de la zona vinícola más importante de México.
+    </p>
   </section>
 
   <!-- --- MATRIZ DE RESUMEN DEL REFUGIO --- -->
-  <!-- Borders adjusted to use var(--color-border-main) natively -->
-  <section 
-    class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 my-12 font-sans"
-    style="border-top: 1px solid var(--color-border-main); border-b: 1px solid var(--color-border-main);"
-  >
-    <div class="text-center md:text-left">
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">
-        El Entorno
-      </h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">
-        Situado sobre colinas de granito privado flanqueadas por antiguos viñedos entre Tecate y Ensenada.
-      </p>
+  <section class="select-none focus:outline-none grid grid-cols-1 md:grid-cols-3 gap-8 py-10 my-12 font-sans text-center md:text-left" style="border-top: 1px solid var(--color-border-main); border-bottom: 1px solid var(--color-border-main);">
+    <div>
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">El Entorno</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Situado sobre colinas de granito privado flanqueadas por antiguos viñedos entre Tecate y Ensenada.</p>
     </div>
-    
-    <!-- Middle block border dividers synced with the variable canvas color context -->
-    <div 
-      class="text-center md:text-left border-y md:border-y-0 md:border-x py-6 md:py-0 md:px-8"
-      style="border-color: var(--color-border-main);"
-    >
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">
-        El Santuario
-      </h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">
-        Diseñado con imponentes muros de concreto, maderas curadas, jacuzzi infinito de piedra y terraza de observación estelar.
-      </p>
+    <div class="border-y md:border-y-0 md:border-x py-6 md:py-0 md:px-8" style="border-color: var(--color-border-main);">
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">El Santuario</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Diseñado con imponentes muros de concreto, maderas curadas, jacuzzi infinito de piedra y terraza de observación estelar.</p>
     </div>
-    
-    <div class="text-center md:text-left md:pl-4">
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-light);">
-        El Horizonte
-      </h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">
-        Acceso inmediato a rutas de motociclismo de montaña, campos de arquería tradicional y zonas de tiro deportivo.
-      </p>
+    <div class="md:pl-4">
+      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">El Horizonte</h4>
+      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Acceso inmediato a rutas de motociclismo de montaña, campos de arquería tradicional y zonas de tiro deportivo.</p>
     </div>
   </section>
 
