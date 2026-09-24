@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg-primary: #faf8f5;       /* Soft, creamy linen white */
+  --color-bg-primary: #dbbc9f;       /* Soft, creamy linen white */
   --color-bg-surface: #ffffff;       /* Pure white for cards/forms */
   --color-bg-tint: #f5f0e6;          /* Warm sand tint for highlights */
-  
-  --color-text-main: #1c1917;        /* Deep stone charcoal for readability */
-  --color-text-title: #2e251f;       /* Dark soil tone for luxury editorial headers */
-  --color-text-muted: #57524e;       /* Muted earth gray */
-  --color-text-light: #a8a29e;       /* Light stone for subtle text metadata */
+  --color-bg-datacard: #dbd8d783;
+
+  --color-text-main: #9f671f;        /* Deep stone charcoal for readability */
+  --color-text-title: #9f671f;       /* Dark soil tone for luxury editorial headers */
+  --color-text-muted: #3e352b;       /* Muted earth gray */
+  --color-text-light: #0c0a09;       /* Light stone for subtle text metadata */
   
   --color-border-main: rgba(28, 25, 23, 0.1); /* Soft transparent structural lines */
-  --color-accent: #b85c37;           /* Rustic terracotta clay accent */
+  --color-accent: #f8f5f5;           /* Rustic terracotta clay accent */
   --color-accent-hover: #703217;     /* Deeper baked clay variant */
 }
 
@@ -20,15 +21,17 @@
   --color-bg-primary: #12100e;
   --color-bg-surface: #1c1917;
   --color-bg-tint: #262220;
+  --color-bg-datacard: #35313059;
 
-  --color-text-main: #faf8f5;
-  --color-text-title: #6d6d6d;
-  --color-text-muted: #6d6d6d;
+  --color-text-main: #c7b194;
+  --color-text-title: #cab69d;
+  --color-text-muted: #c9c3c6;
   --color-text-light: #6d6d6d;
 
-  --color-border-main: rgba(245, 240, 230, 0.15);
-  --color-accent: #e07a5f;
-  --color-accent-hover: #f29479;
+  --color-border-main: rgba(128, 120, 105, 0.363);
+  --color-accent: #c9c3c6;
+  --color-accent-hover: #c9bab6;
+
 }
 
 @layer base {

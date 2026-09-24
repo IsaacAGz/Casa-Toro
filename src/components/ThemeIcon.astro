@@ -14,7 +14,7 @@
         background: none;
     }
 
-    .sun { fill: blank; }
+    .sun { fill: black; }
     .moon {fill: transparent; }
 
     :global(.dark) .sun { fill: transparent; }
@@ -30,7 +30,16 @@
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   };
 
-  // 2. Application runner function
+  // 2. Theme toggling click behavior
+  const handleToggle = () => {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark');
+    
+    // Persist user selection choice inside local storage memory
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  };
+
+  // 3. Application runner function
   const initTheme = () => {
     const theme = getThemePreference();
     const root = document.documentElement;
@@ -51,21 +60,22 @@
     }
   };
 
-  // 3. Theme toggling click behavior
-  const handleToggle = () => {
-    const root = document.documentElement;
-    const isDark = root.classList.toggle('dark');
-    
-    // Persist user selection choice inside local storage memory
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  };
-
   // ==========================================================================
   // VIEW TRANSITIONS LIFECYCLE HOOKS
   // ==========================================================================
   
   // Fires instantly on regular full-browser initial landings
   initTheme();
+
+  // Astro View Transitions Support
+  document.addEventListener('astro:after-swap', () => {
+    const theme = getThemePreference();
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  });
 
   // Fires seamlessly every single time Astro changes pages and swap animations complete
   document.addEventListener('astro:page-load', initTheme);
