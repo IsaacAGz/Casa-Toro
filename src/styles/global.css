@@ -77,6 +77,11 @@
     @apply max-w-7xl mx-auto px-6 py-8 leading-relaxed;
   }
 
+  /* Index: strip sits flush under hero and against features */
+  body.layout-full > main.index-main {
+    padding-top: 0;
+  }
+
   body.layout-full > .site-footer-wrap {
     @apply max-w-7xl mx-auto px-6;
   }
