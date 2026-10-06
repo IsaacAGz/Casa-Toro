@@ -165,7 +165,7 @@ onUnmounted(() => observer?.disconnect())
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .feature-block {

@@ -1,13 +1,11 @@
 ---
-// src/layouts/BaseLayout.astro
-import Header from '../components/Header.astro';
+import SiteNav from '../components/SiteNav.astro';
 import Footer from '../components/Footer.astro';
 import "../styles/global.css";
 import { ClientRouter } from 'astro:transitions';
 
 const { pageTitle } = Astro.props;
 
-// Global WhatsApp Configurations for Casa Toro
 const WHATSAPP_NUMBER = "16196001137";
 const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting your website and would love to check rates and availability for an upcoming stay.");
 ---
@@ -25,12 +23,15 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
 		<title>{pageTitle}</title>
 		<ClientRouter />
 	</head>
-	<body>
-		<Header />
+	<body class="layout-full">
+		<SiteNav />
+		<slot name="hero" />
 		<main transition:animate="fade">
 			<slot />
 		</main>	
-		<Footer />
+		<div class="site-footer-wrap pb-10">
+			<Footer />
+		</div>
 
 		<a 
 			href={`https://wa.me/${WHATSAPP_NUMBER}?text=${PREDEFINED_MESSAGE}`}
@@ -40,7 +41,6 @@ const PREDEFINED_MESSAGE = encodeURIComponent("Hola Casa Toro! 👋 I'm visiting
 			aria-label="Inquire via WhatsApp"
 			class="wa-fab fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20ba5a] hover:scale-105 transition-all duration-300 group"
 		>
-			<!-- Font Awesome Icon (Replaces the SVG) -->
 			<i class="fa-brands fa-whatsapp text-3xl"></i>
 
 			<span class="absolute right-16 bg-stone-900 text-stone-100 font-sans text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-sm border border-stone-800">

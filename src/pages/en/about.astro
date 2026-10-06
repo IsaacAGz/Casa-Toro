@@ -1,27 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 const pageTitle = "Our Story";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  
-  <!-- --- CHAPTER 1: THE VISION (INTRO HERO) --- -->
-  <section class="py-16 max-w-3xl mx-auto text-center">
-    <span class="text-[10px] tracking-widest uppercase font-sans block mb-3" style="color: var(--color-text-light);">
-      Architectural Concept
-    </span>
-    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide m-0 mb-6 uppercase" style="color: var(--color-text-title);">
-      The Soul of Casa Toro
-    </h1>
-    <p class="font-serif italic text-lg leading-relaxed m-0" style="color: var(--color-text-muted);">
-      "Built not to disrupt the landscape, but to sit quietly within it."
-    </p>
-  </section>
+  <PageHero
+    slot="hero"
+    eyebrow="Architectural Concept"
+    title="The Soul of Casa Toro"
+    subtitle='"Built not to disrupt the landscape, but to sit quietly within it."'
+    image="/images/placeholders/cabin-interior.jpg"
+  />
 
-  <!-- --- CHAPTER 2: THE SPLIT STORY MATRIX --- -->
   <section class="space-y-20 my-12">
-    
-    <!-- Block A: The Architecture -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase" style="color: var(--color-text-title);">
@@ -33,14 +25,13 @@ const pageTitle = "Our Story";
       </div>
       <div class="aspect-[4/3] overflow-hidden" style="background-color: var(--color-bg-surface); border: 1px solid var(--color-border-main);">
         <img 
-          src="../../../public/images/Valle-View.jpeg" 
+          src="/images/Valle-View.jpeg" 
           alt="Modern concrete architectural details" 
           class="w-full h-full object-cover grayscale opacity-90 contrast-110"
         />
       </div>
     </div>
 
-    <!-- Block B: The Terroir & Region -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div class="md:order-last">
         <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase" style="color: var(--color-text-title);">
@@ -52,15 +43,12 @@ const pageTitle = "Our Story";
       </div>
       <div class="aspect-[4/3] overflow-hidden" style="background-color: var(--color-bg-surface); border: 1px solid var(--color-border-main);">
         <img 
-          src="../../../public/images/Bull.jpg" 
+          src="/images/Bull.jpg" 
           alt="Vineyard hillsides in Baja" 
           class="w-full h-full object-cover"
         />
       </div>
     </div>
-
-    
-
   </section>
 
   <section class="bg-bg-surface border-y border-border-main p-12 my-20 text-center font-sans transition-colors duration-300">
@@ -74,7 +62,6 @@ const pageTitle = "Our Story";
     </div>
   </section>
 
-  <!-- --- CHAPTER 3: CALL TO ACTION FOOTER --- -->
   <section class="py-12 text-center max-w-md mx-auto font-sans">
     <h4 class="text-xs uppercase tracking-widest font-bold mb-4" style="color: var(--color-text-light);">
       Ready to Experience It?

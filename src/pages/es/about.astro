@@ -1,27 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 const pageTitle = "Nuestra Historia — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  
-  <!-- --- CAPÍTULO 1: LA VISIÓN (HERO INTRO) --- -->
-  <section class="py-16 max-w-3xl mx-auto text-center">
-    <span class="text-[10px] tracking-widest uppercase font-sans block mb-3" style="color: var(--color-text-light);">
-      Concepto Arquitectónico
-    </span>
-    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide m-0 mb-6 uppercase">
-      El Alma de Casa Toro
-    </h1>
-    <p class="font-serif italic text-lg leading-relaxed m-0">
-      "Diseñado no para irrumpir en el paisaje, sino para habitar silenciosamente en él."
-    </p>
-  </section>
+  <PageHero
+    slot="hero"
+    eyebrow="Concepto Arquitectónico"
+    title="El Alma de Casa Toro"
+    subtitle='"Diseñado no para irrumpir en el paisaje, sino para habitar silenciosamente en él."'
+    image="/images/placeholders/cabin-interior.jpg"
+  />
 
-  <!-- --- CAPÍTULO 2: HISTORIA EN MATRIZ --- -->
   <section class="space-y-20 my-12">
-    
-    <!-- Bloque A: La Arquitectura -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase">
@@ -33,14 +25,13 @@ const pageTitle = "Nuestra Historia — Casa Toro";
       </div>
       <div class="aspect-[4/3] bg-bg-surface border border-border-main overflow-hidden">
         <img 
-          src="../../../public/images/Valle-View.jpeg" 
+          src="/images/Valle-View.jpeg" 
           alt="Detalles arquitectónicos de concreto moderno" 
           class="w-full h-full object-cover grayscale opacity-90 contrast-110"
         />
       </div>
     </div>
 
-    <!-- Bloque B: El Terruño y la Región -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div class="md:order-last">
         <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase">
@@ -52,16 +43,14 @@ const pageTitle = "Nuestra Historia — Casa Toro";
       </div>
       <div class="aspect-[4/3] bg-bg-surface border border-border-main overflow-hidden">
         <img 
-          src="../../../public/images/Bull.jpg" 
+          src="/images/Bull.jpg" 
           alt="Colinas de viñedos en Baja" 
           class="w-full h-full object-cover"
         />
       </div>
     </div>
-
   </section>
 
-  <!-- --- CAPÍTULO 3: EL MANIFIESTO (Sincronizado con el contenedor de superficie) --- -->
   <section class="bg-bg-surface border-y border-border-main p-12 my-20 text-center font-sans transition-colors duration-300">
     <div class="max-w-xl mx-auto space-y-6">
       <h2 class="font-serif text-2xl md:text-3xl font-normal m-0 mb-4 border-none p-0 tracking-wide uppercase">
@@ -73,7 +62,6 @@ const pageTitle = "Nuestra Historia — Casa Toro";
     </div>
   </section>
 
-  <!-- --- CAPÍTULO 4: LLAMADO A LA ACCIÓN --- -->
   <section class="py-12 text-center max-w-md mx-auto font-sans">
     <h4 class="text-xs uppercase tracking-widest text-text-light font-bold mb-4">
       ¿Listo para vivir la experiencia?

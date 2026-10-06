@@ -1,13 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import ReviewBoard from '../../components/ReviewBoard.vue';
 
 const pageTitle = "Guest Journal — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <!-- Main content frame wrapping our interactive feed system -->
-  <main class="py-6 px-2">
+  <PageHero
+    slot="hero"
+    eyebrow="Guest Voices"
+    title="Guest Journal"
+    subtitle="Stories and impressions from stays at Casa Toro — quiet mornings, valley light, and nights under Baja skies."
+    image="/images/placeholders/vineyard-deck.jpg"
+  />
+
+  <div class="py-6 px-2">
     <ReviewBoard client:load />
-  </main>
+  </div>
 </BaseLayout>
