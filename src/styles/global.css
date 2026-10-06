@@ -2,6 +2,7 @@
 
 :root {
   /* Warm Valle palette — orange-brown type + clay accents */
+  --font-display: "Rubik Dirt", Georgia, serif;
   --color-bg-primary: #ebe3d4;       /* Warm clay-sand */
   --color-bg-surface: #f7f1e6;       /* Soft parchment */
   --color-bg-tint: #e0d2bc;          /* Warm sand highlight */
@@ -49,6 +50,13 @@
     box-sizing: border-box;
     /* Smooth linear color transition on global theme modification swaps */
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Rubik Dirt — display/brand accents only (not body copy) */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.04em;
   }
 
   body {
@@ -242,9 +250,9 @@
   }
 
   .nav-drawer-brand {
-    font-family: var(--font-serif), Georgia, serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-drawer-text);
   }

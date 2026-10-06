@@ -1,21 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import ReviewBoard from '../../components/ReviewBoard.vue';
+import ProjectsGrid from '../../components/ProjectsGrid.astro';
 
-const pageTitle = "Guest Journal — Casa Toro";
+// Reviews hub replaced by Related Projects (URL kept for existing links)
+const pageTitle = "Related Projects — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <PageHero
     slot="hero"
-    eyebrow="Guest Voices"
-    title="Guest Journal"
-    subtitle="Stories and impressions from stays at Casa Toro — quiet mornings, valley light, and nights under Baja skies."
+    eyebrow="The Family of Work"
+    title="Related Projects"
+    subtitle="Ventures connected to the same spirit as Casa Toro—food for the road, routes through Baja, and a community rooted in Valle de Guadalupe."
     image="/images/placeholders/vineyard-deck.jpg"
   />
 
-  <div class="py-6 px-2">
-    <ReviewBoard client:load />
-  </div>
+  <ProjectsGrid locale="en" />
 </BaseLayout>

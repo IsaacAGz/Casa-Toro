@@ -224,10 +224,10 @@ onUnmounted(() => observer?.disconnect())
 }
 
 .feature-headline {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.75rem);
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   line-height: 1.15;
   text-transform: uppercase;
   color: var(--color-text-title);

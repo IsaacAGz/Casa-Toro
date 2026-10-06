@@ -3,17 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import ProjectsGrid from '../../components/ProjectsGrid.astro';
 
-const pageTitle = "Proyectos Relacionados — Casa Toro";
+const pageTitle = "Related Projects — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <PageHero
     slot="hero"
-    eyebrow="La Familia de Proyectos"
-    title="Proyectos Relacionados"
-    subtitle="Iniciativas unidas al mismo espíritu de Casa Toro—comida para el camino, rutas por Baja y una comunidad enraizada en el Valle de Guadalupe."
+    eyebrow="The Family of Work"
+    title="Related Projects"
+    subtitle="Ventures connected to the same spirit as Casa Toro—food for the road, routes through Baja, and a community rooted in Valle de Guadalupe."
     image="/images/placeholders/vineyard-deck.jpg"
   />
 
-  <ProjectsGrid locale="es" />
+  <ProjectsGrid locale="en" />
 </BaseLayout>

@@ -4,7 +4,7 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-[var(--color-border-main)] pb-6 mb-10 gap-4">
       <div>
         <span class="text-xs font-sans tracking-widest uppercase text-[var(--color-text-light)] block mb-1">Estancia Curada</span>
-        <h2 class="text-3xl font-serif m-0 text-yellow uppercase tracking-wide">La Experiencia del Valle</h2>
+        <h2 class="text-3xl font-display m-0 text-yellow uppercase tracking-wide">La Experiencia del Valle</h2>
       </div>
     </div>
 

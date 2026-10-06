@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+
+const pageTitle = "Power Meals — Related Projects";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PageHero
+    slot="hero"
+    eyebrow="Nutrition"
+    title="Power Meals"
+    subtitle="Fuel for the valley—prepared meals for active days between Tecate and Ensenada."
+    image="/images/placeholders/cabin-interior.jpg"
+  />
+  <ProjectDetail
+    locale="en"
+    paragraphs={[
+      "Power Meals delivers prepared, high-energy meals designed for hikers, riders, wine-country weekends, and anyone who wants real food without the kitchen clock.",
+      "Menus lean on Baja produce, clean proteins, and packs that travel well—from cabin kitchens to trailheads and dusty roadside stops.",
+      "This page is a placeholder hub. Swap the external link below when the live Power Meals site or ordering flow is ready.",
+    ]}
+    linkLabel="Visit Power Meals (placeholder)"
+    linkHref="https://example.com/power-meals"
+  />
+</BaseLayout>
