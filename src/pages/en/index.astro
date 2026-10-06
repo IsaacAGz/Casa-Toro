@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
 import IndexLayout from '../../layouts/IndexLayout.astro';
-import ExperienceGrid from '../../components/ExperienceGrid.vue';
+import OverviewStrip from '../../components/OverviewStrip.astro';
+import FeatureSections from '../../components/FeatureSections.vue';
 import GalleryDisplay from '../../components/GalleryDisplay.vue';
 
 const pageTitle = "Casa Toro";
@@ -9,26 +9,20 @@ const pageTitle = "Casa Toro";
 
 <IndexLayout pageTitle={pageTitle}>
 
-  <!-- --- THE OVERVIEW FRAME (LUXURY HOVER BLOCKS) --- -->
-  <section class="select-none focus:outline-none grid grid-cols-1 md:grid-cols-3 gap-8 py-10 my-12 font-sans text-center md:text-left" style="border-top: 1px solid var(--color-border-main); border-bottom: 1px solid var(--color-border-main);">
-    <div>
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">The Setting</h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Perched on private boulder ridges flanked by old-growth vineyard rows between Tecate and Ensenada.</p>
+  <OverviewStrip locale="en" />
+
+  <FeatureSections client:visible locale="en" />
+
+  <section class="gallery-section py-16 md:py-20">
+    <div class="mb-8 md:mb-10">
+      <span class="text-[10px] tracking-[0.2em] uppercase font-sans font-semibold block mb-2" style="color: var(--color-text-light);">
+        The Property
+      </span>
+      <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide m-0 uppercase border-0 pb-0" style="color: var(--color-text-title);">
+        Gallery
+      </h2>
     </div>
-    <div class="border-y md:border-y-0 md:border-x py-6 md:py-0 md:px-8" style="border-color: var(--color-border-main);">
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">The Sanctuary</h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Featuring modern concrete features, raw structural timbers, custom stone infinity hot tub, and stargazing deck.</p>
-    </div>
-    <div class="md:pl-4">
-      <h4 class="text-[11px] uppercase tracking-widest font-bold m-0 mb-1" style="color: var(--color-text-main:);">The Horizon</h4>
-      <p class="text-sm m-0 leading-relaxed" style="color: var(--color-text-muted);">Direct access to mountain off-road motorcycle loops, tactical rifle lines, and archery target fields.</p>
-    </div>
+    <GalleryDisplay client:visible />
   </section>
-
-  <!-- GALLERY SECTION -->
-  <GalleryDisplay client:visible />
-
-  <!-- --- EXPERIENCE GALLERY MATRIX --- -->
-  <ExperienceGrid client:visible />
 
 </IndexLayout>

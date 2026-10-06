@@ -56,8 +56,8 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 180px;
-  gap: 0.75rem;
+  grid-auto-rows: 160px;
+  gap: 0.5rem;
   padding: 0;
 }
 
@@ -65,6 +65,7 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(24px);
+  background-color: var(--color-bg-tint);
   transition:
     opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
@@ -87,7 +88,6 @@
   transform: scale(1.04);
 }
 
-/* Feature some cells — adjust nth-child to taste */
 .gallery-item:nth-child(1) { grid-column: span 4; grid-row: span 2; }
 .gallery-item:nth-child(2) { grid-column: span 2; grid-row: span 2; }
 .gallery-item:nth-child(3) { grid-column: span 2; grid-row: span 1; }
@@ -100,7 +100,8 @@
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
+    grid-auto-rows: 140px;
+    gap: 0.4rem;
   }
   .gallery-item,
   .gallery-item:nth-child(n) {
@@ -110,6 +111,17 @@
   .gallery-item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .gallery-item:hover img {
+    transform: none;
   }
 }
 </style>

@@ -1,37 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg-primary: #dbbc9f;       /* Soft, creamy linen white */
-  --color-bg-surface: #ffffff;       /* Pure white for cards/forms */
-  --color-bg-tint: #947039;          /* Warm sand tint for highlights */
-  --color-bg-datacard: #dbd8d783;
+  /* Desert / Valle palette — soft bone + earth, terracotta accents */
+  --color-bg-primary: #efe8dc;       /* Warm bone sand */
+  --color-bg-surface: #fffbf7;       /* Warm off-white for cards/forms */
+  --color-bg-tint: #e4d5bf;          /* Soft sand highlight */
+  --color-bg-datacard: rgba(228, 213, 191, 0.55);
 
-  --color-text-main: #9f671f;        /* Deep stone charcoal for readability */
-  --color-text-title: #9f671f;       /* Dark soil tone for luxury editorial headers */
-  --color-text-muted: #3e352b;       /* Muted earth gray */
-  --color-text-light: #0c0a09;       /* Light stone for subtle text metadata */
-  
-  --color-border-main: rgba(28, 25, 23, 0.1); /* Soft transparent structural lines */
-  --color-accent: #f8f5f5;           /* Rustic terracotta clay accent */
-  --color-accent-hover: #703217;     /* Deeper baked clay variant */
+  --color-text-main: #2c2620;        /* Deep charcoal for body/nav */
+  --color-text-title: #1f1a15;       /* Near-black soil for headers */
+  --color-text-muted: #5c534a;       /* Muted earth gray */
+  --color-text-light: #8a8075;       /* Soft stone for metadata/eyebrows */
+
+  --color-border-main: rgba(44, 38, 32, 0.12);
+  --color-accent: #a65d3f;           /* Terracotta clay */
+  --color-accent-hover: #7e4129;     /* Deeper baked clay */
 }
 
 /* Dark mode overrides */
 .dark {
-  --color-bg-primary: #12100e;
+  --color-bg-primary: #14110e;
   --color-bg-surface: #1c1917;
-  --color-bg-tint: #262220;
-  --color-bg-datacard: #35313059;
+  --color-bg-tint: #2a241e;
+  --color-bg-datacard: rgba(53, 49, 48, 0.45);
 
-  --color-text-main: #c7b194;
-  --color-text-title: #cab69d;
-  --color-text-muted: #c9c3c6;
-  --color-text-light: #6d6d6d;
+  --color-text-main: #e8dfd2;
+  --color-text-title: #f0e6d8;
+  --color-text-muted: #b8afa3;
+  --color-text-light: #9a9186;
 
-  --color-border-main: rgba(128, 120, 105, 0.363);
-  --color-accent: #c9c3c6;
-  --color-accent-hover: #c9bab6;
-
+  --color-border-main: rgba(184, 175, 163, 0.28);
+  --color-accent: #d08a6a;
+  --color-accent-hover: #e8b090;
 }
 
 @layer base {
@@ -41,6 +41,7 @@
     color: var(--color-text-main); 
     scroll-behavior: smooth;
     box-sizing: border-box;
+    overflow-x: hidden;
     /* Smooth linear color transition on global theme modification swaps */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
