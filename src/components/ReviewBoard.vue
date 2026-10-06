@@ -5,7 +5,7 @@
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-stone-200/80 pb-8 mb-12 gap-4">
       <div>
         <span class="text-[10px] tracking-widest uppercase text-stone-400 block mb-1">Guest Journal</span>
-        <h2 class="text-3xl font-serif font-normal m-0 text-stone-900 tracking-wide uppercase">Stories & Reviews</h2>
+        <h2 class="text-3xl font-serif font-medium leading-tight m-0 text-stone-900 text-balance">Stories & Reviews</h2>
       </div>
       <button 
         @click="showForm = !showForm"

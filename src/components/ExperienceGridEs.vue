@@ -4,43 +4,31 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-[var(--color-border-main)] pb-6 mb-10 gap-4">
       <div>
         <span class="text-xs font-sans tracking-widest uppercase text-[var(--color-text-light)] block mb-1">Estancia Curada</span>
-        <h2 class="text-3xl font-display m-0 text-yellow uppercase tracking-wide">La Experiencia del Valle</h2>
+        <h2 class="text-3xl md:text-4xl font-display leading-tight m-0 text-balance border-0 pb-0">La Experiencia del Valle</h2>
       </div>
     </div>
 
-    <!-- Matriz de Cuadrícula Responsiva -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div 
-        v-for="exp in filteredExperiences" 
+    <div class="experience-grid">
+      <article
+        v-for="(exp, index) in filteredExperiences"
         :key="exp.id"
-        class="group bg-[var(--color-bg-datacard)] border border-[var(--color-border-main)] shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md hover:border-stone-200"
+        class="experience-panel"
+        :class="{ 'experience-panel--lift': index === 1 }"
       >
-        <!-- Marco de la Imagen -->
-        <div class="relative overflow-hidden aspect-[4/3] bg-[var(--color-bg-tint)]">
-          <img 
-            :src="exp.image" 
+        <div class="experience-panel-media">
+          <img
+            :src="exp.image"
             :alt="exp.title"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-
-        <!-- Área de Contenido -->
-        <div class="p-6 flex-1 flex flex-col justify-between">
+        <div class="experience-panel-copy">
           <div>
-            <h3 class="text-xl font-serif font-normal text-[var(--color-text-main)] tracking-wide mt-0 mb-2">
-              {{ exp.title }}
-            </h3>
-            <p class="text-sm leading-relaxed text-[var(--color-text-muted)] font-sans m-0">
-              {{ exp.description }}
-            </p>
+            <h3>{{ exp.title }}</h3>
+            <p>{{ exp.description }}</p>
           </div>
-          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-            <span class="text-xs font-sans tracking-wider text-[var(--color-text-light)] italic">
-              {{ exp.highlight }}
-            </span>
-          </div>
+          <span class="experience-highlight">{{ exp.highlight }}</span>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 </template>

@@ -14,9 +14,9 @@ const targetPath = isSpanish
     : `/es${pathname}`; // Fallback if root path
 ---
 
-<a 
+<a
   href={targetPath}
-  class="font-sans text-[11px] tracking-widest uppercase text-[var(--color-text-main)] font-semibold border border-[var(--color-border-main)] px-2.5 py-1 transition-all hover:bg-[var(--color-bg-tint)] hover:text-[var(--color-accent)]"
+  class="nav-control"
 >
   {isSpanish ? 'EN' : 'ES'}
 </a>
