@@ -1,25 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import ExperienceGrid from '../../components/ExperienceGrid.vue';
 const pageTitle = "Experiences — Casa Toro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<!-- Hero Section -->
-	<header class="py-20 text-center max-w-4xl mx-auto" style="border-bottom: 1px solid var(--color-border-main); transition: border-color 0.3s ease;">
-		<span class="text-xs tracking-widest font-sans uppercase block mb-3" style="color: var(--color-text-light); transition: color 0.3s ease;">
-			Baja California, Mexico
-		</span>
-		<h1 class="text-5xl md:text-6xl font-serif font-light tracking-wide m-0" style="color: var(--color-text-title); transition: color 0.3s ease;">
-			RUSTIC RETREAT, REFINED LUXURY.
-		</h1>
-		<p class="mt-6 max-w-xl mx-auto font-sans text-sm md:text-base leading-relaxed m-0" style="color: var(--color-text-muted); transition: color 0.3s ease;">
-			A modern architectural retreat carved into the stunning boulder hillsides between Tecate and Ensenada.
-		</p>
-	</header>
+	<PageHero
+		slot="hero"
+		eyebrow="Baja California, Mexico"
+		title="Rustic Retreat, Refined Luxury"
+		subtitle="A modern architectural retreat carved into the stunning boulder hillsides between Tecate and Ensenada."
+		image="/images/placeholders/fireside-night.jpg"
+	/>
 
-	<!-- Interactive Experiences Component Section -->
-	<main>
-		<ExperienceGrid client:visible />
-	</main>
+	<ExperienceGrid client:visible />
 </BaseLayout>

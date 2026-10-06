@@ -1,25 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import ExperienceGrid from '../../components/ExperienceGridEs.vue';
 const pageTitle = "Experiences";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<!-- Hero Section -->
-	<header class="py-20 text-center max-w-4xl mx-auto" style="border-bottom: 1px solid var(--color-border-main);">
-		<span class="text-xs tracking-widest font-sans uppercase block mb-3" style="color: var(--color-text-light);">
-			Baja California, Mexico
-		</span>
-		<h1>
-			RETIRO RUSTICO, LUJO REFINADO
-		</h1>
-		<p class="max-w-xl mx-auto">
-			Un retiro moderno ubicado entre las colinas rocosa entre Tecate y Ensenada
-		</p>
-	</header>
+	<PageHero
+		slot="hero"
+		eyebrow="Baja California, México"
+		title="Retiro Rústico, Lujo Refinado"
+		subtitle="Un retiro moderno ubicado entre las colinas rocosas entre Tecate y Ensenada."
+		image="/images/placeholders/fireside-night.jpg"
+	/>
 
-	<!-- Interactive Experiences Component Section -->
-	<main>
-		<ExperienceGrid client:visible />
-	</main>
+	<ExperienceGrid client:visible />
 </BaseLayout>

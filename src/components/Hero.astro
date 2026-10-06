@@ -1,0 +1,29 @@
+---
+// src/components/Navigation.astro
+const { pathname } = Astro.url;
+const isEs = pathname.startsWith('/es');
+
+// Define your translated text
+const heroSubtitle = isEs
+  ? 'Donde el minimalismo arquitectónico puro se encuentra con el alma rústica del principal valle vinícola de México.'
+  : 'Where raw architectural minimalism meets the sun-baked, rustic soul of Mexico\'s premier wine valley.';
+---
+
+<!-- --- HERO STATEMENT HEADER --- -->
+<section class="relative py-20 md:py-28 text-center max-w-none mx-auto select-none focus:outline-none">
+  <div class="flex items-center justify-center gap-3">
+    <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
+    <span class="text-[10px] tracking-widest uppercase font-sans font-semibold" style="color: var(--color-text-muted);">
+      Valle de Guadalupe, B.C.
+    </span>
+    <span class="w-8 h-px" style="background-color: var(--color-border-main);"></span>
+  </div>
+  
+  <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide m-0 mb-6 uppercase" style="color: var(--color-text-title);">
+    CASA TORO
+  </h1>
+
+  <p class="font-serif italic text-lg md:text-xl leading-relaxed max-w-2xl mx-auto m-0" style="color: var(--color-text-muted);">
+    {heroSubtitle}
+  </p>
+</section>
