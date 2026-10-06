@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+
+const pageTitle = "Dustline — Proyectos Relacionados";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PageHero
+    slot="hero"
+    eyebrow="Viajes"
+    title="Dustline"
+    subtitle="Planificación de road trips por Baja—rutas, paradas de vino y kilómetros de polvo."
+    image="/images/placeholders/trail-dust.jpg"
+  />
+  <ProjectDetail
+    locale="es"
+    paragraphs={[
+      "Dustline es el nombre provisional de un planificador de road trips en Baja: rutas día a día, bodegas y comida, campamentos, combustible y notas sobre terracería—como el tramo final hacia Casa Toro.",
+      "Pensado para viajeros que quieren estructura sin perder la sensación de carretera abierta—desde San Diego hacia el Valle de Guadalupe y la costa.",
+      "Esta página es un marcador. Apunta el enlace a la app o sitio de Dustline cuando se lance.",
+    ]}
+    linkLabel="Abrir Dustline (marcador)"
+    linkHref="https://example.com/dustline"
+  />
+</BaseLayout>

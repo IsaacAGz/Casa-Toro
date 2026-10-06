@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+
+const pageTitle = "Mirasol Collective — Proyectos Relacionados";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PageHero
+    slot="hero"
+    eyebrow="Comunidad"
+    title="Mirasol Collective"
+    subtitle="Un desarrollo comunitario en el Valle de Guadalupe—hogares y suelo compartido entre viñedos."
+    image="/images/placeholders/vineyard-deck.jpg"
+  />
+  <ProjectDetail
+    locale="es"
+    paragraphs={[
+      "Mirasol Collective es una identidad provisional para un desarrollo habitacional y comunitario en el Valle de Guadalupe—la misma región vinícola que enmarca Casa Toro.",
+      "El concepto equilibra hogares privados con paisajes compartidos: patios de encuentro, senderos y arquitectura que se asienta con las colinas, no en contra.",
+      "Usa esta página como marcador hasta tener marca, planos y sitio público. Actualiza el enlace externo cuando exista.",
+    ]}
+    linkLabel="Visitar Mirasol Collective (marcador)"
+    linkHref="https://example.com/mirasol-collective"
+  />
+</BaseLayout>
