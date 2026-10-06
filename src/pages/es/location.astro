@@ -1,76 +1,60 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 const pageTitle = "La Ruta — Casa Toro";
 
 const TIMELAPSE_VIDEO_ID = "dQw4w9WgXcQ"; 
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  
-  <!-- --- CABECERA --- -->
-  <section class="py-16 max-w-3xl mx-auto text-center">
-    <span class="text-[10px] tracking-widest uppercase font-sans block mb-3" style="color: var(--color-text-light);">El Trayecto</span>
-    <h1 class="font-serif text-4xl md:text-5xl font-light tracking-wide text-text-main m-0 mb-6 uppercase">
-      Cómo Llegar
-    </h1>
-    <p class="font-sans text-sm text-text-muted leading-relaxed max-w-xl mx-auto m-0">
-      En el corazón indómito del Valle de Guadalupe, elevados entre Tecate y Ensenada. Disfruta de nuestra vista previa en video para preparar tu viaje antes de tu llegada.
-    </p>
+  <PageHero
+    slot="hero"
+    eyebrow="El Trayecto"
+    title="Cómo Llegar"
+    subtitle="En el corazón indómito del Valle de Guadalupe, elevados entre Tecate y Ensenada. Disfruta de nuestra vista previa en video para preparar tu viaje antes de tu llegada."
+    image="/images/placeholders/trail-dust.jpg"
+  />
+
+  <section class="route-video">
+    <div class="experience-panel experience-panel--still">
+      <div class="experience-panel-media route-video-media">
+        <iframe
+          src={`https://www.youtube.com/embed/${TIMELAPSE_VIDEO_ID}?rel=0&modestbranding=1`}
+          title="Timelapse de la Ruta a Casa Toro"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <p class="route-caption">Vista de la ruta: Carretera Federal 3 hacia las tierras altas de roca</p>
   </section>
 
-  <!-- --- CONTENEDOR DE VIDEO DE LA RUTA --- -->
-  <section class="max-w-5xl mx-auto mb-16 px-2">
-    <!-- bg-black is kept for video player borders to preserve native widescreen frames securely -->
-    <div class="relative w-full aspect-video bg-black shadow-md border border-border-main overflow-hidden">
-      <iframe
-        class="absolute top-0 left-0 w-full h-full"
-        src={`https://www.youtube.com/embed/${TIMELAPSE_VIDEO_ID}?rel=0&modestbranding=1`}
-        title="Timelapse de la Ruta a Casa Toro"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="mt-4 text-center">
-      <span class="text-[11px] font-serif italic text-text-muted">
-        Vista de la ruta: Carretera Federal 3 hacia las tierras altas de roca
-      </span>
-    </div>
-  </section>
-
-  <!-- --- DETALLES DE CONDUCCIÓN --- -->
-  <!-- Replaced border-stone-200 with border-border-main -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto border-t border-border-main pt-12 pb-16 font-sans">
-    
-    <!-- Columna Izquierda: Indicaciones de Carretera -->
-    <div class="space-y-6">
+  <section class="route-guide">
+    <div class="route-notes">
       <div>
-        <h3 class="text-xs uppercase tracking-widest text-text-light font-bold mt-0 mb-2">Desde Tecate (Ruta Norte)</h3>
-        <p class="text-sm text-text-muted leading-loose m-0">
+        <h2 class="route-heading">Desde Tecate, la ruta norte</h2>
+        <p class="route-copy">
           Toma la Carretera Federal 3 rumbo a Ensenada. Conducirás a través de impresionantes valles desérticos y curvas rocosas. Presta atención al llegar al kilómetro 55, justo en los señalamientos de piedra donde deberás tomar nuestra desviación de terracería a la izquierda al rancho el Fresno.
         </p>
       </div>
       <div>
-        <h3 class="text-xs uppercase tracking-widest text-text-light font-bold mt-0 mb-2">Desde Ensenada (Ruta Costa)</h3>
-        <p class="text-sm text-text-muted leading-loose m-0">
+        <h2 class="route-heading">Desde Ensenada, la ruta costa</h2>
+        <p class="route-copy">
           Conduce al norte por la Carretera Federal 3 adentrándote en el Valle de Guadalupe. Pasarás la zona principal de casas vinícolas. A medida que la carretera asciende hacia las crestas de la montaña, prestando atencion al llegar al kilometro 56 veras la entrada de terracería a mano derecha al rancho el Fresno.
         </p>
       </div>
     </div>
 
-    <!-- Columna Derecha: Avisos de Viaje -->
-    <!-- Replaced bg-stone-50 and border-stone-200 with dynamic design tokens -->
-    <div class="bg-bg-surface border border-border-main p-8 space-y-4">
-      <h3 class="text-xs uppercase tracking-widest text-text-main font-bold mt-0 mb-1">Recomendación para el Viajero</h3>
-      <p class="text-xs text-text-muted leading-loose m-0">
+    <aside class="advisory-panel">
+      <span class="feature-eyebrow">Recomendación para el viajero</span>
+      <p class="route-copy">
         Aunque la Carretera 3 está completamente pavimentada, los últimos 1.5 kilometers para llegar a Casa Toro consisten en un camino rústico de terracería diseñado para mantener el aislamiento total del lugar.
       </p>
-      <div class="pt-4 border-t border-border-main flex items-center justify-between">
-        <span class="text-[11px] uppercase tracking-wider text-text-light font-semibold">Vehículo Sugerido</span>
-        <span class="text-xs font-semibold text-text-main">Crossover / SUV o Moto Doble Propósito</span>
+      <div class="advisory-meta">
+        <span>Vehículo sugerido</span>
+        <span>Crossover / SUV o moto doble propósito</span>
       </div>
-    </div>
-
+    </aside>
   </section>
 
 </BaseLayout>

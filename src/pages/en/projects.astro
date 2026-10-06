@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProjectsGrid from '../../components/ProjectsGrid.astro';
+
+const pageTitle = "Related Projects — Casa Toro";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PageHero
+    slot="hero"
+    eyebrow="The Family of Work"
+    title="Related Projects"
+    subtitle="Ventures connected to the same spirit as Casa Toro—food for the road, routes through Baja, and a community rooted in Valle de Guadalupe."
+    image="/images/placeholders/vineyard-deck.jpg"
+  />
+
+  <ProjectsGrid locale="en" />
+</BaseLayout>

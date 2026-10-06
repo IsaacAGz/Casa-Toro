@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ProjectDetail from '../../../components/ProjectDetail.astro';
+
+const pageTitle = "Dustline — Related Projects";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PageHero
+    slot="hero"
+    eyebrow="Travel"
+    title="Dustline"
+    subtitle="Road trip planning for Baja—routes, wine stops, and the long dirt miles in between."
+    image="/images/placeholders/trail-dust.jpg"
+  />
+  <ProjectDetail
+    locale="en"
+    paragraphs={[
+      "Dustline is the working name for a Baja road-trip planner: day-by-day routes, winery and food stops, campsites, fuel points, and notes on graded dirt approaches—like the final stretch to Casa Toro.",
+      "Built for travelers who want structure without losing the open-road feel—from San Diego south through Valle de Guadalupe and along the coast.",
+      "This page is a placeholder. Point the link below at the live Dustline app or marketing site when it launches.",
+    ]}
+    linkLabel="Open Dustline (placeholder)"
+    linkHref="https://example.com/dustline"
+  />
+</BaseLayout>

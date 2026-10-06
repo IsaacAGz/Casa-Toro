@@ -1,0 +1,75 @@
+---
+const {
+  eyebrow = '',
+  title,
+  subtitle = '',
+  image,
+} = Astro.props;
+---
+
+<section
+  class="page-hero w-full min-h-[62vh] md:min-h-[72vh] flex flex-col justify-end relative"
+  style={`background-image: url('${image}'); background-repeat: no-repeat; background-size: cover; background-position: center;`}
+  aria-label={title}
+>
+  <div
+    class="page-hero-scrim absolute inset-0"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 px-6 md:px-12 pt-24 pb-14 md:pb-16 text-center max-w-4xl mx-auto select-none">
+    {eyebrow && (
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="page-hero-rule w-8 h-px"></span>
+        <span class="text-[10px] tracking-widest uppercase font-sans font-semibold" style="color: var(--color-text-muted);">
+          {eyebrow}
+        </span>
+        <span class="page-hero-rule w-8 h-px"></span>
+      </div>
+    )}
+
+    <h1
+      class="font-display text-4xl md:text-6xl leading-[1.1] m-0 mb-6 text-balance"
+      style="color: var(--color-text-title);"
+    >
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p
+        class="font-serif italic text-lg md:text-xl leading-[1.45] max-w-[65ch] mx-auto m-0 pb-1"
+        style="color: var(--color-text-muted);"
+      >
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    overflow: hidden;
+  }
+
+  .page-hero-scrim {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 34%,
+      color-mix(in srgb, var(--color-bg-primary) 55%, transparent) 58%,
+      color-mix(in srgb, var(--color-bg-primary) 86%, transparent) 78%,
+      color-mix(in srgb, var(--color-bg-primary) 96%, transparent) 100%
+    );
+    pointer-events: none;
+  }
+
+  .page-hero h1,
+  .page-hero p {
+    text-shadow: 0 1px 16px color-mix(in srgb, var(--color-bg-primary) 55%, transparent);
+  }
+
+  .page-hero-rule {
+    background-color: var(--color-text-muted);
+    opacity: 0.55;
+  }
+</style>

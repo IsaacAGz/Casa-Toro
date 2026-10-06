@@ -1,0 +1,124 @@
+---
+const { locale = 'en' } = Astro.props;
+const isEs = locale === 'es';
+const prefix = isEs ? '/es' : '/en';
+
+const projects = isEs
+  ? [
+      {
+        eyebrow: 'Nutrición',
+        name: 'Power Meals',
+        blurb: 'Comidas preparadas con enfoque en energía y recuperación—pensadas para viajeros activos, deportistas y escapadas por Baja.',
+        href: `${prefix}/projects/power-meals`,
+        image: '/images/placeholders/cabin-interior.jpg',
+        cta: 'Ver proyecto',
+      },
+      {
+        eyebrow: 'Viajes',
+        name: 'Dustline',
+        blurb: 'Un planificador de road trips para la península: rutas, paradas vinícolas, campamentos y tramos de terracería entre el Valle y la costa.',
+        href: `${prefix}/projects/dustline`,
+        image: '/images/placeholders/trail-dust.jpg',
+        cta: 'Ver proyecto',
+      },
+      {
+        eyebrow: 'Comunidad',
+        name: 'Mirasol Collective',
+        blurb: 'Un desarrollo habitacional y comunitario en el Valle de Guadalupe—viviendas, espacios compartidos y conexión con el paisaje vinícola.',
+        href: `${prefix}/projects/mirasol-collective`,
+        image: '/images/placeholders/vineyard-deck.jpg',
+        cta: 'Ver proyecto',
+      },
+    ]
+  : [
+      {
+        eyebrow: 'Nutrition',
+        name: 'Power Meals',
+        blurb: 'Prepared meals built for energy and recovery—made for active travelers, athletes, and long Baja weekends.',
+        href: `${prefix}/projects/power-meals`,
+        image: '/images/placeholders/cabin-interior.jpg',
+        cta: 'View project',
+      },
+      {
+        eyebrow: 'Travel',
+        name: 'Dustline',
+        blurb: 'A peninsula road-trip planner: routes, wine stops, campsites, and dirt stretches from the Valle to the coast.',
+        href: `${prefix}/projects/dustline`,
+        image: '/images/placeholders/trail-dust.jpg',
+        cta: 'View project',
+      },
+      {
+        eyebrow: 'Community',
+        name: 'Mirasol Collective',
+        blurb: 'A residential and community development in Valle de Guadalupe—homes, shared spaces, and life among the vineyards.',
+        href: `${prefix}/projects/mirasol-collective`,
+        image: '/images/placeholders/vineyard-deck.jpg',
+        cta: 'View project',
+      },
+    ];
+---
+
+<section class="projects-grid py-8 md:py-12">
+  <div class="grid grid-cols-1 gap-14 md:gap-20">
+    {projects.map((project, i) => (
+      <article
+        class:list={[
+          'project-card grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center',
+          i % 2 === 1 && 'md:[&>.project-media]:order-2',
+        ]}
+      >
+        <div class="project-media aspect-[16/10] overflow-hidden" style="background-color: var(--color-bg-tint);">
+          <img
+            src={project.image}
+            alt={project.name}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="project-copy">
+          <span
+            class="text-[10px] tracking-[0.2em] uppercase font-sans font-semibold block mb-3"
+            style="color: var(--color-text-light);"
+          >
+            {project.eyebrow}
+          </span>
+          <h2
+            class="font-display text-3xl md:text-4xl leading-tight m-0 mb-4 text-balance border-0 pb-0"
+            style="color: var(--color-text-title);"
+          >
+            {project.name}
+          </h2>
+          <p
+            class="font-sans text-sm md:text-base leading-relaxed m-0 mb-6"
+            style="color: var(--color-text-muted);"
+          >
+            {project.blurb}
+          </p>
+          <a href={project.href} class="project-cta">
+            {project.cta}
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .project-cta {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-accent) !important;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 0.2rem;
+    text-decoration: none;
+  }
+
+  .project-cta:hover {
+    color: var(--color-accent-hover) !important;
+    border-color: var(--color-accent-hover);
+  }
+</style>

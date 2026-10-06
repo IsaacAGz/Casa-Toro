@@ -1,28 +1,48 @@
 ---
-// src/components/Navigation.astro
 const { pathname } = Astro.url;
 const langPrefix = pathname.startsWith('/es') ? '/es' : '/en';
+const isEs = langPrefix === '/es';
 
-// Define translated path links arrays dynamically
-const links = langPrefix === '/es' 
+const links = isEs
   ? [
       { href: `${langPrefix}/`, label: 'Inicio' },
       { href: `${langPrefix}/about`, label: 'Nosotros' },
+      { href: `${langPrefix}/experiences`, label: 'Experiencias' },
       { href: `${langPrefix}/location`, label: 'Ruta' },
-      { href: `${langPrefix}/reviews`, label: 'Reseñas' },
-      { href: `${langPrefix}/experiences`, label: 'Experiencias' }
+      { href: `${langPrefix}/projects`, label: 'Proyectos' },
     ]
   : [
       { href: `${langPrefix}/`, label: 'Home' },
       { href: `${langPrefix}/about`, label: 'About' },
+      { href: `${langPrefix}/experiences`, label: 'Experiences' },
       { href: `${langPrefix}/location`, label: 'Location' },
-      { href: `${langPrefix}/reviews`, label: 'Reviews' },
-      { href: `${langPrefix}/experiences`, label: 'Experiences' }
+      { href: `${langPrefix}/projects`, label: 'Projects' },
     ];
+
+const closeLabel = isEs ? 'Cerrar' : 'Close';
 ---
 
-<div class="nav-links">
-  {links.map(link => (
-    <a href={link.href}>{link.label}</a>
-  ))}
-</div>
+<div class="nav-backdrop" data-nav-backdrop hidden></div>
+
+<aside
+  id="main-menu"
+  class="nav-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label={isEs ? 'Menú de navegación' : 'Navigation menu'}
+  aria-hidden="true"
+>
+  <div class="nav-drawer-header">
+    <span class="nav-drawer-brand">Casa Toro</span>
+    <button type="button" class="nav-drawer-close" data-nav-close aria-label={closeLabel}>
+      {closeLabel}
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+  <nav class="nav-links" aria-label={isEs ? 'Principal' : 'Primary'}>
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</aside>
