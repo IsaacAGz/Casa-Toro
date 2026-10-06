@@ -1,66 +1,59 @@
 ---
 import Social from './Social.astro';
 
-// You can swap these placeholders out for your actual social platforms later!
+const locale = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
+
 const platforms = [
   { name: 'Instagram', username: 'casatorovalle' },
   { name: 'Github', username: 'IsaacAGz' },
 ];
+
+const copy = locale === 'es'
+  ? {
+      line: 'Un refugio de arquitectura en las colinas de roca del Valle de Guadalupe.',
+      cabin: 'La cabaña',
+      experiences: 'Experiencias',
+      route: 'Cómo llegar',
+      inquiries: 'Consultas',
+      privacy: 'Privacidad',
+      terms: 'Términos',
+      rights: 'Todos los derechos reservados.',
+      navLabel: 'Pie de página',
+    }
+  : {
+      line: 'A refined architectural escape in the boulder hills of Valle de Guadalupe.',
+      cabin: 'The cabin',
+      experiences: 'Experiences',
+      route: 'The route',
+      inquiries: 'Inquiries',
+      privacy: 'Privacy',
+      terms: 'Terms',
+      rights: 'All rights reserved.',
+      navLabel: 'Footer',
+    };
+
+const prefix = `/${locale}`;
 ---
 
-<footer class="mt-20 border-t border-[var(--color-border-main)] bg-transparent pt-16 pb-12 font-sans">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 mb-12">
-    
-    <!-- Column 1: Brand Statement & Geography -->
-    <div class="flex flex-col space-y-4">
-      <h3 class="font-serif text-lg tracking-widest uppercase text-[var(--color-accent-hover)] m-0 font-normal">
-        CASA TORO
-      </h3>
-      <p class="text-xs text-stone-500 leading-relaxed max-w-xs m-0">
-        A refined architectural escape tucked into the boulder hills between Tecate and Ensenada.
-      </p>
-      <span class="text-[11px] uppercase tracking-wider text-[var(--color-text-muted)]">
-        Valle de Guadalupe, Baja California
-      </span>
-    </div>
-
-    <!-- Column 2: Secondary Quick Navigation Matrix -->
-    <div class="flex flex-col space-y-3">
-      <h4 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] font-semibold m-0">
-        Explore
-      </h4>
-      <ul class="list-none p-0 m-0 space-y-2.5">
-        <li><a href="/about" class="text-xs text-[var(--color-text-muted)] hover:[var(--color-accent-hover)] transition-colors normal-case tracking-normal font-normal">The Cabin</a></li>
-        <li><a href="/experiences" class="text-xs text-[var(--color-text-muted)] hover:[var(--color-accent-hover)] transition-colors normal-case tracking-normal font-normal">Curated Experiences</a></li>
-        <li><a href="/location" class="text-xs text-[var(--color-text-muted)] hover:[var(--color-accent-hover)] transition-colors normal-case tracking-normal font-normal">Location & Directions</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Social Connectivity & Contact -->
-    <div class="flex flex-col space-y-3">
-      <h4 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] font-semibold m-0">
-        Connect With Us
-      </h4>
-      <div class="flex flex-wrap gap-x-4 gap-y-2">
-        {platforms.map((p) => (
-          <Social platform={p.name} username={p.username} />
-        ))}
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="site-footer-mark">Casa Toro</p>
+    <p class="site-footer-line">{copy.line}</p>
+    <nav class="site-footer-links" aria-label={copy.navLabel}>
+      <a href={`${prefix}/about`}>{copy.cabin}</a>
+      <a href={`${prefix}/experiences`}>{copy.experiences}</a>
+      <a href={`${prefix}/location`}>{copy.route}</a>
+      {platforms.map((p) => (
+        <Social platform={p.name} username={p.username} />
+      ))}
+      <a href="mailto:isaac.angulogomez@gmail.com">{copy.inquiries}</a>
+    </nav>
+    <div class="site-footer-meta">
+      <p>&copy; {new Date().getFullYear()} Valle Cabin Retreat. {copy.rights}</p>
+      <div class="site-footer-legal">
+        <a href="/privacy">{copy.privacy}</a>
+        <a href="/terms">{copy.terms}</a>
       </div>
-      <p class="text-xs text-[var(--color-text-muted)] m-0 pt-2">
-        Inquiries: <span class="text-stone-600 font-medium">isaac.angulogomez@gmail.com</span>
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Sub-Footer Copyright Row -->
-  <div class="pt-8 border-t border-[var(--color-border-main)] flex flex-col sm:flex-row justify-between items-center gap-4">
-    <p class="text-[11px] text-stone-500 m-0 font-light">
-      &copy; {new Date().getFullYear()} Valle Cabin Retreat. All rights reserved.
-    </p>
-    <div class="flex gap-4">
-      <a href="/privacy" class="text-[11px] text-stone-500 hover:text-stone-600 normal-case tracking-normal font-normal">Privacy</a>
-      <a href="/terms" class="text-[11px] text-stone-500 hover:text-stone-600 normal-case tracking-normal font-normal">Terms</a>
     </div>
   </div>
 </footer>
